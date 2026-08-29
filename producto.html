@@ -90,69 +90,7 @@ aria-label="Contactar por WhatsApp"
 ☎
 </a>
 
-<script> /* ========================= PRODUCTOS ========================= */ const productos = { triple: { nombre: "Triple Estimulador Gyrating & Vibrating Rabbit Vibe", categoria: "Estimuladores", descripcion: "🔥 Triple Estimulador Passion Play
-
-¡Tres formas de disfrutar, un solo juguete! 💋
-
-Llevá tus momentos de placer a otro nivel con el Triple Estimulador Passion Play, diseñado para combinar penetración, movimiento rotatorio y estimulación externa simultánea.
-
-✨ ¿Qué lo hace especial?
-
-💜 Vibrador central para penetración con movimiento rotatorio que aporta una sensación más dinámica.
-🔥 Dos brazos estimuladores externos con diferentes formas y relieves para variar las sensaciones.
-⚡ 18 funciones de vibración para elegir entre distintos ritmos e intensidades.
-🌸 Diseño ergonómico y textura aterciopelada para una experiencia cómoda.
-💑 Ideal para disfrutar a solas o en pareja.
-🔋 Recargable por USB e incluye cable cargador.
-💎 Fabricado en silicona suave y ABS.
-
-Un solo juguete. Tres puntos de estimulación. Infinitas formas de disfrutar. 🔥
-
-📩 Consultanos por disponibilidad y precio.
-🚚 Envíos discretos y seguros..", precio: "$145.000", imagenes: [ "img/Triple Estimulador - Gryating and vibrating rabbit vibe - PP0186.png", "img/pp0186-.png", "img/pp0186_2_.png", "img/pp0186_4_.png" ] },
-        
-        fiorella: { nombre: "Fiorella 1", categoria: "Doble estimulación", descripcion: "💗 Vibrador Doble Estimulación – Descubrí una nueva forma de disfrutar
-
-¿Buscás un juguete versátil para explorar nuevas sensaciones? ✨ Este vibrador recargable combina estimulación vaginal, Punto G y clitorial en un diseño ergonómico pensado para acompañarte en cada momento.
-
-🔥 Todo lo que necesitás para disfrutar más:
-
-💕 Doble motor para una estimulación potente y simultánea.
-🌸 Diseño curvo para favorecer el contacto con el Punto G.
-✨ Estimulador clitorial de diseño uniforme para una experiencia envolvente.
-⚡ 10 ritmos diferentes de vibración para elegir la intensidad que más te guste.
-🤫 Silencioso y discreto, ideal para disfrutar con tranquilidad.
-🩷 Fabricado en silicona aterciopelada, suave y agradable al tacto.
-📏 Medidas: 18,5 cm x 3,3 cm.
-💗 Color: Fucsia.
-🔋 Recargable.
-
-✨ Explorá, descubrí y encontrá tus sensaciones favoritas.
-
-📩 Consultanos por precio y disponibilidad.
-🚚 Envíos discretos y seguros.", precio: "$65.000", imagenes: [ "img/Fiorella 1.jpeg", "img/Fiorella 1 foto 2.jpeg", "img/Fiorella 1 foto 3.jpeg", "img/Fiorella 1 foto 4.jpeg" ] }, 
-        
-        ana5: { nombre: "ANA 5 - ST-TOY-035", categoria: "Succión + vibración", descripcion: "💗 SEX THERAPY ANA 5 – SUCCIÓN + VIBRACIÓN
-
-🔥 Dos sensaciones en un solo juguete. Descubrí una nueva forma de disfrutar con el Ana 5, diseñado para combinar succión y vibración y adaptarse a tus preferencias.
-
-✨ Características:
-
-💋 Succión + vibración para una experiencia más intensa.
-⚡ 10 modos de vibración para elegir diferentes ritmos y sensaciones.
-🔘 Encendido/apagado manteniendo presionado el botón durante 1,5 segundos.
-🔋 Recargable y práctico para usar donde quieras.
-⏱️ Duración aproximada de batería: 1 hora.
-💡 Luz indicadora de carga.
-📏 Longitud: 10 cm.
-📐 Ancho: 6,7 cm.
-⭕ Diámetro: 3,5 cm.
-⚖️ Peso: 78 g.
-
-💗 Compacto, potente y pensado para llevar tus momentos de placer a otro nivel.
-
-📩 Consultanos por precio y disponibilidad.
-🚚 Envíos discretos y seguros..", precio: "$100.000", imagenes: [ "img/ANA 5 - ST-TOY-035.jpeg", "img/ST - TOY - 035.jpg" ] } }; /* ========================= OBTENER PRODUCTO ========================= */ const parametros = new URLSearchParams( window.location.search ); const productoId = parametros.get("id"); /* ========================= CARGAR PRODUCTO ========================= */ const producto = productos[productoId]; /* ========================= VERIFICAR PRODUCTO ========================= */ if (!producto) { document.getElementById( "product-name" ).textContent = "Producto no encontrado"; document.getElementById( "category" ).textContent = "Punto G Sex Shop"; document.getElementById( "description" ).textContent = "El producto que estás buscando no existe."; document.getElementById( "price" ).textContent = ""; } else { document.title = producto.nombre + " | Punto G Sex Shop"; document.getElementById( "product-name" ).textContent = producto.nombre; document.getElementById( "category" ).textContent = producto.categoria; document.getElementById( "description" ).textContent = producto.descripcion; document.getElementById( "price" ).textContent = producto.precio; const gallery = document.getElementById( "gallery" ); const dots = document.getElementById( "dots" ); producto.imagenes.forEach( function(imagen, index) { const img = document.createElement( "img" ); img.src = imagen; img.alt = producto.nombre; if (index === 0) { img.classList.add( "active" ); } gallery.insertBefore( img, gallery.querySelector( ".gallery-button" ) ); const dot = document.createElement( "button" );
+<script> /* ========================= PRODUCTOS ========================= */ const productos = { triple: { nombre: "Triple Estimulador Gyrating & Vibrating Rabbit Vibe", categoria: "Estimuladores", descripcion: "Triple estimulador de silicona + ABS con 18 funciones de vibración.", precio: "$145.000", imagenes: [ "img/Triple Estimulador - Gryating and vibrating rabbit vibe - PP0186.png", "img/pp0186-.png", "img/pp0186_2_.png", "img/pp0186_4_.png" ] }, fiorella: { nombre: "Fiorella 1", categoria: "Doble estimulación", descripcion: "Vibrador recargable de doble estimulación con diseño ergonómico.", precio: "$65.000", imagenes: [ "img/Fiorella 1.jpeg", "img/Fiorella 1 foto 2.jpeg", "img/Fiorella 1 foto 3.jpeg", "img/Fiorella 1 foto 4.jpeg" ] }, ana5: { nombre: "ANA 5 - ST-TOY-035", categoria: "Succión + vibración", descripcion: "Sex Therapy ANA 5. Succión y vibración recargable.", precio: "$100.000", imagenes: [ "img/ANA 5 - ST-TOY-035.jpeg", "img/ST - TOY - 035.jpg" ] } }; /* ========================= OBTENER PRODUCTO ========================= */ const parametros = new URLSearchParams( window.location.search ); const productoId = parametros.get("id"); /* ========================= CARGAR PRODUCTO ========================= */ const producto = productos[productoId]; /* ========================= VERIFICAR PRODUCTO ========================= */ if (!producto) { document.getElementById( "product-name" ).textContent = "Producto no encontrado"; document.getElementById( "category" ).textContent = "Punto G Sex Shop"; document.getElementById( "description" ).textContent = "El producto que estás buscando no existe."; document.getElementById( "price" ).textContent = ""; } else { document.title = producto.nombre + " | Punto G Sex Shop"; document.getElementById( "product-name" ).textContent = producto.nombre; document.getElementById( "category" ).textContent = producto.categoria; document.getElementById( "description" ).textContent = producto.descripcion; document.getElementById( "price" ).textContent = producto.precio; const gallery = document.getElementById( "gallery" ); const dots = document.getElementById( "dots" ); producto.imagenes.forEach( function(imagen, index) { const img = document.createElement( "img" ); img.src = imagen; img.alt = producto.nombre; if (index === 0) { img.classList.add( "active" ); } gallery.insertBefore( img, gallery.querySelector( ".gallery-button" ) ); const dot = document.createElement( "button" );
         dot.type = "button"; dot.className = "dot";
         dot.setAttribute("aria-label", "Ver foto " + (index + 1));
         dot.addEventListener("click", function() { goToImage(index); }); if (index === 0) { dot.classList.add( "active" ); } dots.appendChild(dot); } ); } /* ========================= GALERIA ========================= */ let currentImage = 0; function goToImage(index) {

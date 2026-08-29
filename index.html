@@ -1,1392 +1,981 @@
 <!DOCTYPE html>
+
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Punto G | Sex Shop</title>
+```
+<meta charset="UTF-8">
 
-    <meta
-        name="description"
-        content="Punto G Sex Shop. Tu placer tiene un punto."
-    >
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-    <style>
+<title>Producto | Punto G Sex Shop</title>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta
+    name="description"
+    content="Punto G Sex Shop"
+>
 
-        html {
-            scroll-behavior: smooth;
-        }
+<style>
 
-        body {
-            background: #0d0b0d;
-            color: #f5eef2;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
 
-        /* =====================================
-           HEADER
-        ===================================== */
+    body {
+        background: #0d0b0d;
+        color: #f5eef2;
 
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-
-            background: rgba(13, 11, 13, 0.96);
-
-            border-bottom: 1px solid #30242b;
-
-            backdrop-filter: blur(10px);
-        }
+        font-family:
+            Arial,
+            Helvetica,
+            sans-serif;
+    }
 
 
-        .nav {
-            max-width: 1200px;
-
-            height: 75px;
-
-            margin: auto;
-
-            padding: 0 20px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: space-between;
-        }
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
 
 
-        .logo {
-            font-family: Georgia, serif;
+    header {
 
-            font-size: 25px;
+        position: sticky;
 
-            font-weight: bold;
+        top: 0;
 
-            letter-spacing: 3px;
-        }
+        z-index: 100;
 
-
-        .logo span {
-            color: #d94a75;
-        }
-
-
-        nav {
-            display: flex;
-
-            gap: 25px;
-        }
-
-
-        nav a {
-            color: #eee;
-
-            font-size: 14px;
-
-            transition: 0.2s;
-        }
-
-
-        nav a:hover {
-            color: #d94a75;
-        }
-
-
-
-        /* =====================================
-           HERO
-        ===================================== */
-
-        .hero {
-            min-height: 600px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            text-align: center;
-
-            padding: 50px 20px;
-
-            background:
-                radial-gradient(
-                    circle at center,
-                    #421827 0%,
-                    #1b1016 40%,
-                    #0d0b0d 75%
-                );
-        }
-
-
-        .hero-content {
-            max-width: 750px;
-        }
-
-
-        .hero h1 {
-            font-family: Georgia, serif;
-
-            font-size: clamp(
-                55px,
-                10vw,
-                100px
+        background:
+            rgba(
+                13,
+                11,
+                13,
+                0.96
             );
 
-            letter-spacing: 5px;
+        border-bottom:
+            1px solid #30242b;
 
-            margin-bottom: 20px;
-        }
+        backdrop-filter:
+            blur(10px);
+    }
 
 
-        .hero h1 span {
-            color: #d94a75;
-        }
+    .nav {
 
+        max-width: 1200px;
 
-        .hero p {
-            color: #c6b9c0;
+        height: 75px;
 
-            font-size: 19px;
+        margin: auto;
 
-            line-height: 1.6;
+        padding: 0 20px;
 
-            margin-bottom: 35px;
-        }
+        display: flex;
 
+        align-items: center;
 
-        .button {
-            display: inline-block;
+        justify-content: space-between;
+    }
 
-            background: #d94a75;
 
-            color: white;
+    .logo {
 
-            padding: 15px 32px;
+        font-family: Georgia, serif;
 
-            border-radius: 30px;
+        font-size: 25px;
 
-            font-weight: bold;
+        font-weight: bold;
 
-            transition: 0.2s;
-        }
+        letter-spacing: 3px;
+    }
 
 
-        .button:hover {
-            background: #ed628c;
+    .logo span {
+        color: #d94a75;
+    }
 
-            transform: translateY(-2px);
-        }
 
+    .product-page {
 
+        max-width: 1200px;
 
-        /* =====================================
-           BENEFICIOS
-        ===================================== */
+        margin: auto;
 
-        .benefits {
-            max-width: 1100px;
+        padding:
+            60px 20px
+            90px;
 
-            margin: auto;
+        display: grid;
 
-            padding: 60px 20px;
+        grid-template-columns:
+            1fr 1fr;
 
-            display: grid;
+        gap: 60px;
+    }
 
-            grid-template-columns:
-                repeat(3, 1fr);
 
-            gap: 20px;
-        }
+    .main-image {
 
+        width: 100%;
 
-        .benefit {
-            background: #151115;
+        height: 550px;
 
-            border: 1px solid #30242b;
-
-            border-radius: 15px;
-
-            padding: 30px;
-
-            text-align: center;
-        }
-
-
-        .benefit h3 {
-            margin-bottom: 10px;
-        }
-
-
-        .benefit p {
-            color: #a99da4;
-
-            font-size: 14px;
-
-            line-height: 1.5;
-        }
-
-
-
-        /* =====================================
-           CATALOGO
-        ===================================== */
-
-        .catalog {
-            max-width: 1200px;
-
-            margin: auto;
-
-            padding: 80px 20px;
-        }
-
-
-        .title {
-            text-align: center;
-
-            margin-bottom: 45px;
-        }
-
-
-        .title h2 {
-            font-family: Georgia, serif;
-
-            font-size: 40px;
-
-            margin-bottom: 10px;
-        }
-
-
-        .title p {
-            color: #aaa0a6;
-        }
-
-
-
-        /* =====================================
-           PRODUCTOS
-        ===================================== */
-
-        .products {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 25px;
-        }
-
-
-        .product {
-            background: #151115;
-
-            border: 1px solid #30242b;
-
-            border-radius: 16px;
-
-            overflow: hidden;
-
-            transition: 0.25s;
-        }
-
-
-        .product:hover {
-            transform: translateY(-6px);
-
-            border-color: #74374c;
-        }
-
-
-
-        /* =====================================
-           GALERIA
-        ===================================== */
-
-        .gallery {
-            position: relative;
-
-            width: 100%;
-
-            height: 360px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #291821,
-                    #100d10
-                );
-
-            overflow: hidden;
-        }
-
-
-        .gallery img {
-            width: 100%;
-
-            height: 100%;
-
-            object-fit: cover;
-
-            display: none;
-        }
-
-
-        .gallery img.active {
-            display: block;
-        }
-
-
-
-        /* BOTONES GALERIA */
-
-        .gallery-button {
-            position: absolute;
-
-            top: 50%;
-
-            transform: translateY(-50%);
-
-            width: 38px;
-
-            height: 38px;
-
-            border-radius: 50%;
-
-            border: none;
-
-            background: rgba(
-                0,
-                0,
-                0,
-                0.65
+        background:
+            linear-gradient(
+                135deg,
+                #291821,
+                #100d10
             );
 
-            color: white;
+        border-radius: 18px;
 
-            font-size: 22px;
+        overflow: hidden;
 
-            cursor: pointer;
-
-            z-index: 5;
-        }
+        margin-bottom: 15px;
+    }
 
 
-        .gallery-button:hover {
-            background: #d94a75;
-        }
+    .main-image img {
+
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: contain;
+    }
 
 
-        .prev {
-            left: 12px;
-        }
+    .thumbnails {
+
+        display: flex;
+
+        gap: 10px;
+
+        overflow-x: auto;
+    }
 
 
-        .next {
-            right: 12px;
-        }
+    .thumbnail {
+
+        width: 80px;
+
+        height: 80px;
+
+        object-fit: cover;
+
+        border-radius: 8px;
+
+        border:
+            1px solid #3b2c34;
+
+        cursor: pointer;
+
+        opacity: 0.6;
+
+        transition: 0.2s;
+    }
 
 
+    .thumbnail:hover,
+    .thumbnail.active {
 
-        /* INDICADORES */
+        opacity: 1;
 
-        .dots {
-            position: absolute;
-
-            bottom: 12px;
-
-            left: 0;
-
-            right: 0;
-
-            display: flex;
-
-            justify-content: center;
-
-            gap: 6px;
-
-            z-index: 5;
-        }
+        border-color:
+            #d94a75;
+    }
 
 
-        .dot {
-            width: 7px;
+    .category {
 
-            height: 7px;
+        color: #d94a75;
 
-            border-radius: 50%;
+        text-transform: uppercase;
 
-            background: rgba(
-                255,
-                255,
-                255,
-                0.45
+        letter-spacing: 2px;
+
+        font-size: 12px;
+
+        margin-bottom: 15px;
+    }
+
+
+    h1 {
+
+        font-family: Georgia, serif;
+
+        font-size:
+            clamp(
+                35px,
+                5vw,
+                55px
             );
+
+        line-height: 1.1;
+
+        margin-bottom: 20px;
+    }
+
+
+    .price {
+
+        font-size: 30px;
+
+        font-weight: bold;
+
+        margin-bottom: 25px;
+    }
+
+
+    .description {
+
+        color: #c1b5bc;
+
+        line-height: 1.7;
+
+        font-size: 16px;
+
+        margin-bottom: 30px;
+
+        white-space: pre-line;
+    }
+
+
+    .features {
+
+        margin-bottom: 30px;
+    }
+
+
+    .features h3 {
+
+        font-family: Georgia, serif;
+
+        margin-bottom: 15px;
+
+        font-size: 22px;
+    }
+
+
+    .features ul {
+
+        list-style: none;
+    }
+
+
+    .features li {
+
+        padding: 9px 0;
+
+        color: #b9adb4;
+
+        border-bottom:
+            1px solid #251d22;
+    }
+
+
+    .features li::before {
+
+        content: "✓";
+
+        color: #d94a75;
+
+        margin-right: 10px;
+
+        font-weight: bold;
+    }
+
+
+    .buttons {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+
+    .buy {
+
+        display: block;
+
+        width: 100%;
+
+        padding: 16px;
+
+        border: none;
+
+        border-radius: 9px;
+
+        background: #d94a75;
+
+        color: white;
+
+        font-size: 16px;
+
+        font-weight: bold;
+
+        cursor: pointer;
+
+        text-align: center;
+
+        transition: 0.2s;
+    }
+
+
+    .buy:hover {
+
+        background: #ed628c;
+
+        transform:
+            translateY(-2px);
+    }
+
+
+    .back {
+
+        display: block;
+
+        width: 100%;
+
+        padding: 14px;
+
+        border:
+            1px solid #44343c;
+
+        border-radius: 9px;
+
+        color: #c1b5bc;
+
+        text-align: center;
+
+        transition: 0.2s;
+    }
+
+
+    .back:hover {
+
+        border-color: #d94a75;
+
+        color: white;
+    }
+
+
+    .privacy {
+
+        max-width: 1200px;
+
+        margin: auto;
+
+        padding:
+            35px 20px;
+
+        border-top:
+            1px solid #30242b;
+
+        text-align: center;
+    }
+
+
+    .privacy h3 {
+
+        font-family: Georgia, serif;
+
+        margin-bottom: 10px;
+    }
+
+
+    .privacy p {
+
+        color: #8f858b;
+
+        font-size: 14px;
+
+        line-height: 1.5;
+    }
+
+
+    .whatsapp {
+
+        position: fixed;
+
+        right: 20px;
+
+        bottom: 20px;
+
+        width: 58px;
+
+        height: 58px;
+
+        border-radius: 50%;
+
+        background: #25d366;
+
+        color: white;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        font-size: 25px;
+
+        z-index: 999;
+    }
+
+
+    @media (max-width: 800px) {
+
+        .product-page {
+
+            grid-template-columns: 1fr;
+
+            gap: 35px;
+
+            padding-top: 35px;
         }
 
 
-        .dot.active {
-            background: white;
+        .main-image {
+
+            height: 400px;
         }
 
+    }
 
-
-        /* =====================================
-           INFORMACION PRODUCTO
-        ===================================== */
-
-        .product-info {
-            padding: 22px;
-        }
-
-
-        .category {
-            color: #d94a75;
-
-            font-size: 11px;
-
-            text-transform: uppercase;
-
-            letter-spacing: 1.5px;
-        }
-
-
-        .product h3 {
-            font-family: Georgia, serif;
-
-            font-size: 21px;
-
-            margin: 10px 0;
-        }
-
-
-        .description {
-            color: #a99da4;
-
-            font-size: 14px;
-
-            line-height: 1.5;
-
-            margin-bottom: 18px;
-        }
-
-
-        .price {
-            font-size: 22px;
-
-            font-weight: bold;
-
-            margin-bottom: 18px;
-        }
-
-
-        .consult-price {
-            color: #d94a75;
-
-            font-size: 18px;
-
-            font-weight: bold;
-
-            margin-bottom: 18px;
-        }
-
-
-        .buy {
-            width: 100%;
-
-            padding: 13px;
-
-            border: 1px solid #d94a75;
-
-            background: #d94a75;
-
-            color: white;
-
-            border-radius: 8px;
-
-            cursor: pointer;
-
-            font-weight: bold;
-
-            font-size: 14px;
-
-            transition: 0.2s;
-        }
-
-
-        .buy:hover {
-            background: #ed628c;
-
-            border-color: #ed628c;
-        }
-
-
-
-        /* =====================================
-           ENVÍOS
-        ===================================== */
-
-        .shipping {
-            padding: 80px 20px;
-
-            text-align: center;
-
-            background: #151115;
-
-            border-top: 1px solid #30242b;
-
-            border-bottom: 1px solid #30242b;
-        }
-
-
-        .shipping h2 {
-            font-family: Georgia, serif;
-
-            font-size: 38px;
-
-            margin-bottom: 15px;
-        }
-
-
-        .shipping p {
-            max-width: 650px;
-
-            margin: auto;
-
-            color: #aaa0a6;
-
-            line-height: 1.6;
-        }
-
-
-
-        /* =====================================
-           FOOTER
-        ===================================== */
-
-        footer {
-            padding: 50px 20px;
-
-            text-align: center;
-
-            color: #81767d;
-
-            font-size: 13px;
-        }
-
-
-
-        /* =====================================
-           WHATSAPP
-        ===================================== */
-
-        .whatsapp {
-            position: fixed;
-
-            right: 20px;
-
-            bottom: 20px;
-
-            width: 58px;
-
-            height: 58px;
-
-            border-radius: 50%;
-
-            background: #25d366;
-
-            color: white;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            font-size: 25px;
-
-            z-index: 999;
-        }
-
-
-
-        /* =====================================
-           RESPONSIVE
-        ===================================== */
-
-        @media (max-width: 900px) {
-
-            .products {
-                grid-template-columns:
-                    repeat(2, 1fr);
-            }
-
-
-            .benefits {
-                grid-template-columns: 1fr;
-            }
-
-        }
-
-
-        @media (max-width: 600px) {
-
-            nav {
-                display: none;
-            }
-
-
-            .products {
-                grid-template-columns: 1fr;
-            }
-
-
-            .gallery {
-                height: 330px;
-            }
-
-
-            .hero {
-                min-height: 500px;
-            }
-
-
-            .hero p {
-                font-size: 16px;
-            }
-
-        }
-
-    </style>
+</style>
+```
 
 </head>
 
-
 <body>
-
-
-<!-- =====================================
-     HEADER
-===================================== -->
 
 <header>
 
-    <div class="nav">
+```
+<div class="nav">
 
-        <div class="logo">
-            PUNTO <span>G</span>
-        </div>
+    <a
+        href="index.html"
+        class="logo"
+    >
 
+        PUNTO <span>G</span>
 
-        <nav>
+    </a>
 
-            <a href="#inicio">
-                Inicio
-            </a>
-
-            <a href="#catalogo">
-                Catálogo
-            </a>
-
-            <a href="#envios">
-                Envíos
-            </a>
-
-            <a href="#contacto">
-                Contacto
-            </a>
-
-        </nav>
-
-    </div>
+</div>
+```
 
 </header>
 
-
-
-<!-- =====================================
-     HERO
-===================================== -->
-
-<section
-    class="hero"
-    id="inicio"
+<main
+    class="product-page"
+    id="product-page"
 >
 
-    <div class="hero-content">
+</main>
 
-        <h1>
-            PUNTO <span>G</span>
-        </h1>
+<section class="privacy">
 
+```
+<h3>
+    📦 Envíos discretos
+</h3>
 
-        <p>
-            Tu placer tiene un punto.
-            <br>
+<p>
 
-            Descubrí productos para disfrutar,
-            explorar y compartir.
-        </p>
+    Todos nuestros pedidos se preparan
+    cuidadosamente en packaging discreto,
+    sin referencias explícitas al contenido.
 
-
-        <a
-            href="#catalogo"
-            class="button"
-        >
-            Ver catálogo
-        </a>
-
-    </div>
+</p>
+```
 
 </section>
-
-
-
-<!-- =====================================
-     BENEFICIOS
-===================================== -->
-
-<section class="benefits">
-
-
-    <div class="benefit">
-
-        <h3>
-            📦 Envíos discretos
-        </h3>
-
-        <p>
-            Recibí tu pedido en un packaging
-            completamente discreto.
-        </p>
-
-    </div>
-
-
-    <div class="benefit">
-
-        <h3>
-            🔒 Compra segura
-        </h3>
-
-        <p>
-            Cuidamos tu privacidad
-            durante todo el proceso.
-        </p>
-
-    </div>
-
-
-    <div class="benefit">
-
-        <h3>
-            💬 Atención personalizada
-        </h3>
-
-        <p>
-            Estamos disponibles para ayudarte
-            a elegir tu producto.
-        </p>
-
-    </div>
-
-
-</section>
-
-
-
-<!-- =====================================
-     CATALOGO
-===================================== -->
-
-<section
-    class="catalog"
-    id="catalogo"
->
-
-
-    <div class="title">
-
-        <h2>
-            Nuestro catálogo
-        </h2>
-
-        <p>
-            Encontrá tu próximo favorito.
-        </p>
-
-    </div>
-
-
-
-    <div class="products">
-
-
-        <!-- =================================
-             PRODUCTO 1
-        ================================= -->
-
-        <article class="product">
-
-
-            <div
-                class="gallery"
-                id="gallery1"
-            >
-
-                <img
-                    src="img/Triple Estimulador - Gryating and vibrating rabbit vibe - PP0186.png"
-                    class="active"
-                    alt="Triple Estimulador PP0186"
-                >
-
-                <img
-                    src="img/pp0186-.png"
-                    alt="Triple Estimulador PP0186"
-                >
-
-                <img
-                    src="img/pp0186_2_.png"
-                    alt="Triple Estimulador PP0186"
-                >
-
-                <img
-                    src="img/pp0186_4_.png"
-                    alt="Triple Estimulador PP0186"
-                >
-
-
-                <button
-                    class="gallery-button prev"
-                    onclick="changeImage('gallery1', -1)"
-                >
-                    ‹
-                </button>
-
-
-                <button
-                    class="gallery-button next"
-                    onclick="changeImage('gallery1', 1)"
-                >
-                    ›
-                </button>
-
-
-                <div class="dots">
-
-                    <span class="dot active"></span>
-
-                    <span class="dot"></span>
-
-                    <span class="dot"></span>
-
-                    <span class="dot"></span>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="product-info">
-
-
-                <span class="category">
-                    Estimuladores
-                </span>
-
-
-                <h3>
-                    Triple Estimulador Gyrating & Vibrating Rabbit Vibe
-                </h3>
-
-
-                <p class="description">
-
-                    Triple estimulador con diseño
-                    tipo rabbit y diferentes funciones
-                    de vibración.
-
-                </p>
-
-
-                <div class="consult-price">
-                    Consultar precio
-                </div>
-
-
-                <button
-                    class="buy"
-                    onclick="consultar('Triple Estimulador Gyrating & Vibrating Rabbit Vibe')"
-                >
-                    Consultar / Comprar
-                </button>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- =================================
-             PRODUCTO 2
-        ================================= -->
-
-        <article class="product">
-
-
-            <div
-                class="gallery"
-                id="gallery2"
-            >
-
-                <img
-                    src="img/Fiorella 1.jpeg"
-                    class="active"
-                    alt="Fiorella 1"
-                >
-
-                <img
-                    src="img/Fiorella 1 foto 2.jpeg"
-                    alt="Fiorella 1"
-                >
-
-                <img
-                    src="img/Fiorella 1 foto 3.jpeg"
-                    alt="Fiorella 1"
-                >
-
-                <img
-                    src="img/Fiorella 1 foto 4.jpeg"
-                    alt="Fiorella 1"
-                >
-
-
-                <button
-                    class="gallery-button prev"
-                    onclick="changeImage('gallery2', -1)"
-                >
-                    ‹
-                </button>
-
-
-                <button
-                    class="gallery-button next"
-                    onclick="changeImage('gallery2', 1)"
-                >
-                    ›
-                </button>
-
-
-                <div class="dots">
-
-                    <span class="dot active"></span>
-
-                    <span class="dot"></span>
-
-                    <span class="dot"></span>
-
-                    <span class="dot"></span>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="product-info">
-
-
-                <span class="category">
-                    Estimuladores
-                </span>
-
-
-                <h3>
-                    Fiorella 1
-                </h3>
-
-
-                <p class="description">
-
-                    Producto Fiorella 1.
-                    Consultanos por características,
-                    disponibilidad y formas de entrega.
-
-                </p>
-
-
-                <div class="consult-price">
-                    Consultar precio
-                </div>
-
-
-                <button
-                    class="buy"
-                    onclick="consultar('Fiorella 1')"
-                >
-                    Consultar / Comprar
-                </button>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- =================================
-             PRODUCTO 3
-        ================================= -->
-
-        <article class="product">
-
-
-            <div
-                class="gallery"
-                id="gallery3"
-            >
-
-                <img
-                    src="img/ANA 5 - ST-TOY-035.jpeg"
-                    class="active"
-                    alt="ANA 5 ST-TOY-035"
-                >
-
-                <img
-                    src="img/ST - TOY - 035.jpg"
-                    alt="ANA 5 ST-TOY-035"
-                >
-
-
-                <button
-                    class="gallery-button prev"
-                    onclick="changeImage('gallery3', -1)"
-                >
-                    ‹
-                </button>
-
-
-                <button
-                    class="gallery-button next"
-                    onclick="changeImage('gallery3', 1)"
-                >
-                    ›
-                </button>
-
-
-                <div class="dots">
-
-                    <span class="dot active"></span>
-
-                    <span class="dot"></span>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="product-info">
-
-
-                <span class="category">
-                    Vibradores
-                </span>
-
-
-                <h3>
-                    ANA 5 - ST-TOY-035
-                </h3>
-
-
-                <p class="description">
-
-                    Producto ANA 5.
-                    Consultanos por disponibilidad
-                    y opciones de compra.
-
-                </p>
-
-
-                <div class="price">
-                    $100.000
-                </div>
-
-
-                <button
-                    class="buy"
-                    onclick="comprar('ANA 5 - ST-TOY-035')"
-                >
-                    Comprar
-                </button>
-
-            </div>
-
-        </article>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================
-     ENVÍOS
-===================================== -->
-
-<section
-    class="shipping"
-    id="envios"
->
-
-
-    <h2>
-        Tu privacidad es importante.
-    </h2>
-
-
-    <p>
-
-        Todos nuestros pedidos se preparan
-        con packaging discreto y sin referencias
-        explícitas al contenido.
-
-    </p>
-
-</section>
-
-
-
-<!-- =====================================
-     FOOTER
-===================================== -->
-
-<footer id="contacto">
-
-    <strong>
-        PUNTO G SEX SHOP
-    </strong>
-
-
-    <br><br>
-
-
-    Tu placer tiene un punto.
-
-
-    <br><br>
-
-
-    Instagram · WhatsApp
-
-
-    <br><br>
-
-
-    © 2026 Punto G Sex Shop
-
-</footer>
-
-
-
-<!-- =====================================
-     WHATSAPP
-===================================== -->
 
 <a
-    class="whatsapp"
-    href="https://wa.me/5491100000000"
-    target="_blank"
-    aria-label="WhatsApp"
+href="https://wa.me/5491100000000"
+class="whatsapp"
+target="_blank"
+aria-label="WhatsApp"
+
 >
-    ☎
+
+```
+☎
+```
+
 </a>
-
-
 
 <script>
 
 
-    /* =====================================
-       CAMBIAR FOTO
-    ===================================== */
+/* =====================================
+   PRODUCTOS
+===================================== */
 
 
-    function changeImage(
-        galleryId,
-        direction
-    ) {
+const productos = {
 
 
-        const gallery =
-            document.getElementById(
-                galleryId
-            );
+    triple: {
+
+        nombre:
+            "Triple Estimulador Gyrating & Vibrating Rabbit Vibe",
+
+        categoria:
+            "Estimuladores",
+
+        precio:
+            145000,
+
+        imagenes: [
+
+            "img/Triple Estimulador - Gryating and vibrating rabbit vibe - PP0186.png",
+
+            "img/pp0186-.png",
+
+            "img/pp0186_2_.png",
+
+            "img/pp0186_4_.png"
+
+        ],
+
+        descripcion:
+            `Triple estimulador de silicona + ABS.
+
+Cuenta con diferentes funciones de vibración
+para ofrecer distintas experiencias de estimulación.
+
+Es USB recargable e incluye cargador.`,
+
+        caracteristicas: [
+
+            "Triple estimulador",
+
+            "Silicona + ABS",
+
+            "18 funciones de vibración",
+
+            "USB recargable",
+
+            "Incluye cargador",
+
+            "Tiempo de carga: 120 minutos",
+
+            "Tiempo de uso: aproximadamente 60 minutos"
+
+        ]
+
+    },
 
 
-        const images =
-            gallery.querySelectorAll(
-                "img"
-            );
+    fiorella: {
+
+        nombre:
+            "Fiorella 1",
+
+        categoria:
+            "Doble estimulación",
+
+        precio:
+            65000,
+
+        imagenes: [
+
+            "img/Fiorella 1.jpeg",
+
+            "img/Fiorella 1 foto 2.jpeg",
+
+            "img/Fiorella 1 foto 3.jpeg",
+
+            "img/Fiorella 1 foto 4.jpeg"
+
+        ],
+
+        descripcion:
+            `¿Buscas un juguete para descubrirte y conocerte mejor?
+
+Este vibrador recargable de doble estimulación
+con glande en su extremo combina estimulación
+vaginal, punto G y clitorial.
+
+Su material de silicona aterciopelada ofrece
+una textura suave y agradable.
+
+Su diseño ergonómico está pensado para acompañar
+la exploración y el disfrute.`,
+
+        caracteristicas: [
+
+            "Doble estimulación",
+
+            "Diseño ergonómico vaginal + punto G + clítoris",
+
+            "10 ritmos diferentes de vibración",
+
+            "2 motores",
+
+            "Silicona aterciopelada",
+
+            "Totalmente silencioso y discreto",
+
+            "Color: fucsia",
+
+            "Medidas: 18,5 cm x 3,3 cm"
+
+        ]
+
+    },
 
 
-        const dots =
-            gallery.querySelectorAll(
-                ".dot"
-            );
+    ana5: {
+
+        nombre:
+            "ANA 5 - ST-TOY-035",
+
+        categoria:
+            "Succión + vibración",
+
+        precio:
+            100000,
+
+        imagenes: [
+
+            "img/ANA 5 - ST-TOY-035.jpeg",
+
+            "img/ST - TOY - 035.jpg"
+
+        ],
+
+        descripcion:
+            `SEX THERAPY ANA 5 combina succión
+y vibración en un dispositivo recargable.
+
+Para encender o apagar, mantener presionado
+el botón durante aproximadamente 1,5 segundos.
+
+Cuenta con diferentes modos de vibración
+que pueden seleccionarse desde el botón
+de encendido.`,
+
+        caracteristicas: [
+
+            "Succión + vibración",
+
+            "Recargable",
+
+            "10 modos de vibración",
+
+            "Duración aproximada de batería: 1 hora",
+
+            "Longitud: 10 cm",
+
+            "Ancho: 6,7 cm",
+
+            "Diámetro: 3,5 cm",
+
+            "Peso: 78 g",
+
+            "Control con pila CR2032",
+
+            "Pila CR2032 no incluida"
+
+        ]
+
+    }
+
+};
 
 
-        let current = 0;
+
+/* =====================================
+   LEER PRODUCTO
+===================================== */
 
 
-        images.forEach(
-            (image, index) => {
+const parametros =
+    new URLSearchParams(
+        window.location.search
+    );
 
-                if (
-                    image.classList.contains(
-                        "active"
-                    )
-                ) {
 
-                    current = index;
+const id =
+    parametros.get("id");
 
-                }
+
+const producto =
+    productos[id];
+
+
+
+/* =====================================
+   PRODUCTO NO ENCONTRADO
+===================================== */
+
+
+if (!producto) {
+
+    document.getElementById(
+        "product-page"
+    ).innerHTML = `
+
+        <section
+            style="
+                grid-column: 1 / -1;
+                text-align: center;
+                padding: 100px 20px;
+            "
+        >
+
+            <h1>
+                Producto no encontrado
+            </h1>
+
+            <br>
+
+            <a
+                href="index.html#catalogo"
+                class="back"
+            >
+                Volver al catálogo
+            </a>
+
+        </section>
+
+    `;
+
+}
+
+
+
+/* =====================================
+   MOSTRAR PRODUCTO
+===================================== */
+
+
+else {
+
+    document.getElementById(
+        "product-page"
+    ).innerHTML = `
+
+
+        <section>
+
+
+            <div class="main-image">
+
+                <img
+                    id="mainImage"
+                    src="${producto.imagenes[0]}"
+                    alt="${producto.nombre}"
+                >
+
+            </div>
+
+
+            <div class="thumbnails">
+
+                ${producto.imagenes.map(
+                    (imagen, index) => `
+
+                    <img
+                        src="${imagen}"
+                        class="thumbnail ${
+                            index === 0
+                                ? "active"
+                                : ""
+                        }"
+                        onclick="cambiarImagen(
+                            '${imagen}',
+                            this
+                        )"
+                        alt="${producto.nombre}"
+                    >
+
+                `
+                ).join("")}
+
+            </div>
+
+        </section>
+
+
+
+        <section>
+
+
+            <div class="category">
+
+                ${producto.categoria}
+
+            </div>
+
+
+            <h1>
+
+                ${producto.nombre}
+
+            </h1>
+
+
+            <div class="price">
+
+                $${producto.precio.toLocaleString(
+                    "es-AR"
+                )}
+
+            </div>
+
+
+            <div class="description">
+
+                ${producto.descripcion}
+
+            </div>
+
+
+            <div class="features">
+
+                <h3>
+                    Características
+                </h3>
+
+
+                <ul>
+
+                    ${producto.caracteristicas.map(
+                        caracteristica => `
+
+                        <li>
+                            ${caracteristica}
+                        </li>
+
+                    `
+                    ).join("")}
+
+                </ul>
+
+            </div>
+
+
+            <div class="buttons">
+
+
+                <button
+                    class="buy"
+                    onclick="comprar(
+                        '${producto.nombre}'
+                    )"
+                >
+
+                    Comprar por WhatsApp
+
+                </button>
+
+
+                <a
+                    href="index.html#catalogo"
+                    class="back"
+                >
+
+                    ← Volver al catálogo
+
+                </a>
+
+
+            </div>
+
+
+        </section>
+
+    `;
+
+}
+
+
+
+/* =====================================
+   CAMBIAR IMAGEN
+===================================== */
+
+
+function cambiarImagen(
+    imagen,
+    elemento
+) {
+
+    document.getElementById(
+        "mainImage"
+    ).src = imagen;
+
+
+    document
+        .querySelectorAll(".thumbnail")
+        .forEach(
+            thumbnail => {
+
+                thumbnail.classList.remove(
+                    "active"
+                );
 
             }
         );
 
 
-        images[
-            current
-        ].classList.remove(
-            "active"
-        );
+    elemento.classList.add(
+        "active"
+    );
 
-
-        dots[
-            current
-        ].classList.remove(
-            "active"
-        );
-
-
-        current += direction;
-
-
-        if (
-            current >= images.length
-        ) {
-
-            current = 0;
-
-        }
-
-
-        if (
-            current < 0
-        ) {
-
-            current =
-                images.length - 1;
-
-        }
-
-
-        images[
-            current
-        ].classList.add(
-            "active"
-        );
-
-
-        dots[
-            current
-        ].classList.add(
-            "active"
-        );
-
-    }
+}
 
 
 
-    /* =====================================
-       COMPRAR ANA 5
-    ===================================== */
+/* =====================================
+   WHATSAPP
+===================================== */
 
 
-    function comprar(
-        producto
-    ) {
+function comprar(
+    producto
+) {
+
+    const telefono =
+        "5491100000000";
 
 
-        const telefono =
-            "5491100000000";
+    const mensaje =
+        `Hola! Quiero comprar ${producto} en Punto G Sex Shop.`;
 
 
-        const mensaje =
-            `Hola! Quiero comprar ${producto} en Punto G Sex Shop.`;
+    const url =
+        `https://wa.me/${telefono}?text=${encodeURIComponent(
+            mensaje
+        )}`;
 
 
-        const url =
-            `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+    window.open(
+        url,
+        "_blank"
+    );
 
-
-        window.open(
-            url,
-            "_blank"
-        );
-
-    }
-
-
-
-    /* =====================================
-       CONSULTAR PRODUCTO
-    ===================================== */
-
-
-    function consultar(
-        producto
-    ) {
-
-
-        const telefono =
-            "5491100000000";
-
-
-        const mensaje =
-            `Hola! Quería consultar por ${producto} de Punto G Sex Shop.`;
-
-
-        const url =
-            `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
-
-
-        window.open(
-            url,
-            "_blank"
-        );
-
-    }
+}
 
 
 </script>
-
 
 </body>
 

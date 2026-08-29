@@ -1,6 +1,6 @@
-<!DOCTYPE html> \<html lang="es"> \<head> \<meta charset="UTF-8"> \<meta name="viewport" content="width=device-width, initial-scale=1.0"> \<title>Producto | Punto G Sex Shop</title> \<meta name="description" content="Detalle del producto - Punto G Sex Shop"> \<style> * { margin: 0; padding: 0; box-sizing: border-box; } html { scroll-behavior: smooth; } body { background: #0d0b0d; color: #ffffff; font-family: Arial, Helvetica, sans-serif; line-height: 1.5; } a { text-decoration: none; color: inherit; } button { font-family: inherit; } /* ========================= HEADER ========================= */ header { position: sticky; top: 0; z-index: 1000; background: rgba(13, 11, 13, 0.98); border-bottom: 1px solid #49323d; backdrop-filter: blur(10px); } .nav { width: 100%; max-width: 1200px; height: 74px; margin: auto; padding: 0 25px; display: flex; align-items: center; justify-content: space-between; } .logo { font-family: Georgia, serif; font-size: 25px; font-weight: bold; letter-spacing: 3px; color: #ffffff; } .logo span { color: #ff6f9d; } .back { color: #ff79a5; font-size: 14px; font-weight: bold; transition: 0.2s; } .back:hover { color: #ffffff; } .gallery-button, .dot, .buy { -webkit-tap-highlight-color: transparent; } /* ========================= PRODUCTO ========================= */ .product-page { width: 100%; max-width: 1150px; margin: auto; padding: 65px 20px 100px; } .product-container { display: grid; grid-template-columns: 1fr 1fr; gap: 55px; align-items: center; } /* ========================= GALERIA ========================= */ .gallery { position: relative; width: 100%; height: 550px; background: radial-gradient( circle at center, #382431, #100d10 ); border: 1px solid #49323d; border-radius: 18px; overflow: hidden; } .gallery img { width: 100%; height: 100%; object-fit: contain; padding: 25px; display: none; user-select: none; } .gallery img.active { display: block; } /* ========================= FLECHAS ========================= */ .gallery-button { position: absolute; top: 50%; transform: translateY(-50%); width: 46px; height: 46px; border: 2px solid #ffffff; border-radius: 50%; background: rgba(0, 0, 0, 0.82); color: #ffffff; font-size: 30px; line-height: 1; cursor: pointer; z-index: 5; transition: 0.2s; } .gallery-button:hover { background: #ff4f86; border-color: #ff4f86; color: #ffffff; } .prev { left: 15px; } .next { right: 15px; } /* ========================= PUNTOS ========================= */ .dots { position: absolute; bottom: 15px; left: 0; right: 0; display: flex; justify-content: center; gap: 8px; z-index: 5; } .dot { width: 10px; height: 10px; padding: 0; border-radius: 50%; background: #8c7c85; border: 1px solid #ffffff; cursor: pointer; appearance: none; transition: 0.2s; } .dot.active { background: #ff6f9d; transform: scale(1.15); } /* ========================= INFORMACION ========================= */ .category { color: #ff79a5; font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; display: block; } .product-info h1 { font-family: Georgia, serif; color: #ffffff; font-size: clamp(35px, 5vw, 55px); line-height: 1.15; margin-bottom: 20px; } .description { color: #d6ccd1; font-size: 16px; line-height: 1.8; margin-bottom: 25px; } .price { color: #ffffff; font-size: 32px; font-weight: bold; margin-bottom: 30px; } /* ========================= BOTON COMPRAR ========================= */ .buy { display: inline-flex; align-items: center; justify-content: center; width: 100%; min-height: 54px; padding: 15px 25px; border: 2px solid #ff5f91; border-radius: 9px; background: #e83f70; color: #ffffff; font-size: 15px; font-weight: bold; cursor: pointer; box-shadow: 0 6px 20px rgba(232, 63, 112, 0.25); transition: 0.2s; } .buy:hover { background: #ff5f91; border-color: #ff85aa; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(255, 95, 145, 0.35); } /* ========================= BOTON VOLVER ========================= */ .back-button { display: inline-flex; align-items: center; justify-content: center; margin-top: 18px; width: 100%; min-height: 52px; padding: 14px 25px; text-align: center; background: #181218; border: 2px solid #ff6f9d; border-radius: 9px; color: #ff8bad; font-size: 14px; font-weight: bold; transition: 0.2s; } .back-button:hover { background: #ff4f86; border-color: #ff4f86; color: #ffffff; } /* ========================= INFO EXTRA ========================= */ .extra-info { margin-top: 35px; padding-top: 25px; border-top: 1px solid #49323d; } .extra-info p { color: #c9bec4; font-size: 14px; margin-bottom: 10px; } /* ========================= FOOTER ========================= */ footer { padding: 55px 20px; text-align: center; color: #aaa0a7; font-size: 13px; border-top: 1px solid #49323d; } footer strong { color: #ffffff; letter-spacing: 2px; } /* ========================= WHATSAPP ========================= */ .whatsapp { position: fixed; right: 20px; bottom: 20px; width: 58px; height: 58px; border-radius: 50%; background: #25d366; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 25px; z-index: 999; box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5); transition: 0.2s; } .whatsapp:hover { background: #35e477; transform: scale(1.08); } /* ========================= CELULAR ========================= */ @media (max-width: 750px) { .nav { height: 68px; padding: 0 18px; } .logo { font-size: 21px; } .back { font-size: 13px; } .product-page { padding: 35px 16px 70px; } .product-container { grid-template-columns: 1fr; gap: 35px; } .gallery { height: 430px; } .product-info h1 { font-size: 38px; } } /* ========================= CELULAR PEQUEÑO ========================= */ @media (max-width: 400px) { .nav { padding: 0 14px; } .back { font-size: 12px; } .gallery { height: 350px; } .product-info h1 { font-size: 32px; } .price { font-size: 28px; } } /* ========================= ACCESIBILIDAD ========================= */ button:focus-visible, a:focus-visible { outline: 3px solid #ffffff; outline-offset: 3px; } </style> </head> \<body> <!-- ========================= HEADER ========================= --> \<header> \<div class="nav"> \<a href="index.html" class="logo"> PUNTO \<span>G</span> </a>
+<!DOCTYPE html> <html lang="es"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Producto | Punto G Sex Shop</title> <meta name="description" content="Detalle del producto - Punto G Sex Shop"> <style> * { margin: 0; padding: 0; box-sizing: border-box; } html { scroll-behavior: smooth; } body { background: #0d0b0d; color: #ffffff; font-family: Arial, Helvetica, sans-serif; line-height: 1.5; } a { text-decoration: none; color: inherit; } button { font-family: inherit; } /* ========================= HEADER ========================= */ header { position: sticky; top: 0; z-index: 1000; background: rgba(13, 11, 13, 0.98); border-bottom: 1px solid #49323d; backdrop-filter: blur(10px); } .nav { width: 100%; max-width: 1200px; height: 74px; margin: auto; padding: 0 25px; display: flex; align-items: center; justify-content: space-between; } .logo { font-family: Georgia, serif; font-size: 25px; font-weight: bold; letter-spacing: 3px; color: #ffffff; } .logo span { color: #ff6f9d; } .back { color: #ff79a5; font-size: 14px; font-weight: bold; transition: 0.2s; } .back:hover { color: #ffffff; } /* ========================= PRODUCTO ========================= */ .product-page { width: 100%; max-width: 1150px; margin: auto; padding: 65px 20px 100px; } .product-container { display: grid; grid-template-columns: 1fr 1fr; gap: 55px; align-items: center; } /* ========================= GALERIA ========================= */ .gallery { position: relative; width: 100%; height: 550px; background: radial-gradient( circle at center, #382431, #100d10 ); border: 1px solid #49323d; border-radius: 18px; overflow: hidden; } .gallery img { width: 100%; height: 100%; object-fit: contain; padding: 25px; display: none; user-select: none; } .gallery img.active { display: block; } /* ========================= FLECHAS ========================= */ .gallery-button { position: absolute; top: 50%; transform: translateY(-50%); width: 46px; height: 46px; border: 2px solid #ffffff; border-radius: 50%; background: rgba(0, 0, 0, 0.82); color: #ffffff; font-size: 30px; line-height: 1; cursor: pointer; z-index: 5; transition: 0.2s; } .gallery-button:hover { background: #ff4f86; border-color: #ff4f86; color: #ffffff; } .prev { left: 15px; } .next { right: 15px; } /* ========================= PUNTOS ========================= */ .dots { position: absolute; bottom: 15px; left: 0; right: 0; display: flex; justify-content: center; gap: 8px; z-index: 5; } .dot { width: 10px; height: 10px; padding: 0; border-radius: 50%; background: #8c7c85; border: 1px solid #ffffff; cursor: pointer; appearance: none; transition: 0.2s; } .dot.active { background: #ff6f9d; transform: scale(1.15); } /* ========================= INFORMACION ========================= */ .category { color: #ff79a5; font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; display: block; } .product-info h1 { font-family: Georgia, serif; color: #ffffff; font-size: clamp(35px, 5vw, 55px); line-height: 1.15; margin-bottom: 20px; } .description { color: #d6ccd1; font-size: 16px; line-height: 1.8; margin-bottom: 25px; } .price { color: #ffffff; font-size: 32px; font-weight: bold; margin-bottom: 30px; } /* ========================= BOTON COMPRAR ========================= */ .buy { display: inline-flex; align-items: center; justify-content: center; width: 100%; min-height: 54px; padding: 15px 25px; border: 2px solid #ff5f91; border-radius: 9px; background: #e83f70; color: #ffffff; font-size: 15px; font-weight: bold; cursor: pointer; box-shadow: 0 6px 20px rgba(232, 63, 112, 0.25); transition: 0.2s; } .buy:hover { background: #ff5f91; border-color: #ff85aa; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(255, 95, 145, 0.35); } /* ========================= BOTON VOLVER ========================= */ .back-button { display: inline-flex; align-items: center; justify-content: center; margin-top: 18px; width: 100%; min-height: 52px; padding: 14px 25px; text-align: center; background: #181218; border: 2px solid #ff6f9d; border-radius: 9px; color: #ff8bad; font-size: 14px; font-weight: bold; transition: 0.2s; } .back-button:hover { background: #ff4f86; border-color: #ff4f86; color: #ffffff; } /* ========================= INFO EXTRA ========================= */ .extra-info { margin-top: 35px; padding-top: 25px; border-top: 1px solid #49323d; } .extra-info p { color: #c9bec4; font-size: 14px; margin-bottom: 10px; } /* ========================= FOOTER ========================= */ footer { padding: 55px 20px; text-align: center; color: #aaa0a7; font-size: 13px; border-top: 1px solid #49323d; } footer strong { color: #ffffff; letter-spacing: 2px; } /* ========================= WHATSAPP ========================= */ .whatsapp { position: fixed; right: 20px; bottom: 20px; width: 58px; height: 58px; border-radius: 50%; background: #25d366; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 25px; z-index: 999; box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5); transition: 0.2s; } .whatsapp:hover { background: #35e477; transform: scale(1.08); } /* ========================= CELULAR ========================= */ @media (max-width: 750px) { .nav { height: 68px; padding: 0 18px; } .logo { font-size: 21px; } .back { font-size: 13px; } .product-page { padding: 35px 16px 70px; } .product-container { grid-template-columns: 1fr; gap: 35px; } .gallery { height: 430px; } .product-info h1 { font-size: 38px; } } /* ========================= CELULAR PEQUEÑO ========================= */ @media (max-width: 400px) { .nav { padding: 0 14px; } .back { font-size: 12px; } .gallery { height: 350px; } .product-info h1 { font-size: 32px; } .price { font-size: 28px; } } /* ========================= ACCESIBILIDAD ========================= */ button:focus-visible, a:focus-visible { outline: 3px solid #ffffff; outline-offset: 3px; } </style> </head> <body> <!-- ========================= HEADER ========================= --> <header> <div class="nav"> <a href="index.html" class="logo"> PUNTO <span>G</span> </a>
 
-\<a
+<a
 href="index.html#catalogo"
 class="back"
 
@@ -9,9 +9,9 @@ class="back"
 ← Volver al catálogo
 </a>
 
-</div> </header> <!-- ========================= PRODUCTO ========================= --> \<main class="product-page"> \<div class="product-container"> <!-- GALERIA --> \<div class="gallery" id="gallery">
+</div> </header> <!-- ========================= PRODUCTO ========================= --> <main class="product-page"> <div class="product-container"> <!-- GALERIA --> <div class="gallery" id="gallery">
 
-\<button
+<button
 type="button"
 class="gallery-button prev"
 onclick="changeImage(-1)"
@@ -22,7 +22,7 @@ aria-label="Foto anterior"
 ‹
 </button>
 
-\<button
+<button
 type="button"
 class="gallery-button next"
 onclick="changeImage(1)"
@@ -33,17 +33,17 @@ aria-label="Foto siguiente"
 ›
 </button>
 
-\<div class="dots" id="dots" ></div> </div> <!-- INFORMACION --> \<div class="product-info">
+<div class="dots" id="dots" ></div> </div> <!-- INFORMACION --> <div class="product-info">
 
-\<span
+<span
 class="category"
 id="category"
 
 > </span>
 
-\<h1 id="product-name"></h1> \<p class="description" id="description" ></p> \<div class="price" id="price" ></div>
+<h1 id="product-name"></h1> <p class="description" id="description" ></p> <div class="price" id="price" ></div>
 
-\<button
+<button
 type="button"
 class="buy"
 onclick="comprar()"
@@ -53,7 +53,7 @@ onclick="comprar()"
 Comprar por WhatsApp
 </button>
 
-\<a
+<a
 href="index.html#catalogo"
 class="back-button"
 
@@ -62,23 +62,23 @@ class="back-button"
 ← Volver al catálogo
 </a>
 
-\<div class="extra-info"> \<p>📦 Envíos discretos</p> \<p>🔒 Compra segura y privada</p> \<p>💬 Atención personalizada por WhatsApp</p> </div> </div> </div> </main> <!-- ========================= FOOTER ========================= --> \<footer> \<strong> PUNTO G SEX SHOP </strong>
+<div class="extra-info"> <p>📦 Envíos discretos</p> <p>🔒 Compra segura y privada</p> <p>💬 Atención personalizada por WhatsApp</p> </div> </div> </div> </main> <!-- ========================= FOOTER ========================= --> <footer> <strong> PUNTO G SEX SHOP </strong>
 
-\<br>\<br>
+<br><br>
 
 Tu placer tiene un punto.
 
-\<br>\<br>
+<br><br>
 
 WhatsApp: 11 2647-3370
 
-\<br>\<br>
+<br><br>
 
 © 2026 Punto G Sex Shop
 
 </footer> <!-- ========================= WHATSAPP ========================= -->
 
-\<a
+<a
 class="whatsapp"
 href="https://wa.me/5491126473370"
 target="_blank"
@@ -90,21 +90,19 @@ aria-label="Contactar por WhatsApp"
 ☎
 </a>
 
-\<script> /* ========================= PRODUCTOS ========================= */ const productos = { triple: { nombre: "Triple Estimulador Gyrating & Vibrating Rabbit Vibe", categoria: "Estimuladores", descripcion: "Triple estimulador de silicona + ABS con 18 funciones de vibración.", precio: "$145.000", imagenes: [ "img/Triple Estimulador - Gryating and vibrating rabbit vibe - PP0186.png", "img/pp0186-.png", "img/pp0186_2_.png", "img/pp0186_4_.png" ] }, fiorella: { nombre: "Fiorella 1", categoria: "Doble estimulación", descripcion: "Vibrador recargable de doble estimulación con diseño ergonómico.", precio: "$65.000", imagenes: [ "img/Fiorella 1.jpeg", "img/Fiorella 1 foto 2.jpeg", "img/Fiorella 1 foto 3.jpeg", "img/Fiorella 1 foto 4.jpeg" ] }, ana5: { nombre: "ANA 5 - ST-TOY-035", categoria: "Succión + vibración", descripcion: "Sex Therapy ANA 5. Succión y vibración recargable.", precio: "$100.000", imagenes: [ "img/ANA 5 - ST-TOY-035.jpeg", "img/ST - TOY - 035.jpg" ] } }; /* ========================= OBTENER PRODUCTO ========================= */ const parametros = new URLSearchParams( window.location.search ); const productoId = parametros.get("id"); /* ========================= CARGAR PRODUCTO ========================= */ const producto = productos[productoId]; /* ========================= VERIFICAR PRODUCTO ========================= */ if (!producto) { document.getElementById( "product-name" ).textContent = "Producto no encontrado"; document.getElementById( "category" ).textContent = "Punto G Sex Shop"; document.getElementById( "description" ).textContent = "El producto que estás buscando no existe."; document.getElementById( "price" ).textContent = ""; } else { document.title = producto.nombre + " | Punto G Sex Shop"; document.getElementById( "product-name" ).textContent = producto.nombre; document.getElementById( "category" ).textContent = producto.categoria; document.getElementById( "description" ).textContent = producto.descripcion; document.getElementById( "price" ).textContent = producto.precio; const gallery = document.getElementById( "gallery" ); const dots = document.getElementById( "dots" ); producto.imagenes.forEach( function(imagen, index) { const img = document.createElement( "img" ); img.src = imagen; img.alt = producto.nombre; if (index === 0) { img.classList.add( "active" ); } gallery.insertBefore( img, gallery.querySelector( ".gallery-button" ) ); const dot = document.createElement( "button" );
+<script> /* ========================= PRODUCTOS ========================= */ const productos = { triple: { nombre: "Triple Estimulador Gyrating & Vibrating Rabbit Vibe", categoria: "Estimuladores", descripcion: "Triple estimulador de silicona + ABS con 18 funciones de vibración.", precio: "$145.000", imagenes: [ "img/Triple Estimulador - Gryating and vibrating rabbit vibe - PP0186.png", "img/pp0186-.png", "img/pp0186_2_.png", "img/pp0186_4_.png" ] }, fiorella: { nombre: "Fiorella 1", categoria: "Doble estimulación", descripcion: "Vibrador recargable de doble estimulación con diseño ergonómico.", precio: "$65.000", imagenes: [ "img/Fiorella 1.jpeg", "img/Fiorella 1 foto 2.jpeg", "img/Fiorella 1 foto 3.jpeg", "img/Fiorella 1 foto 4.jpeg" ] }, ana5: { nombre: "ANA 5 - ST-TOY-035", categoria: "Succión + vibración", descripcion: "Sex Therapy ANA 5. Succión y vibración recargable.", precio: "$100.000", imagenes: [ "img/ANA 5 - ST-TOY-035.jpeg", "img/ST - TOY - 035.jpg" ] } }; /* ========================= OBTENER PRODUCTO ========================= */ const parametros = new URLSearchParams( window.location.search ); const productoId = parametros.get("id"); /* ========================= CARGAR PRODUCTO ========================= */ const producto = productos[productoId]; /* ========================= VERIFICAR PRODUCTO ========================= */ if (!producto) { document.getElementById( "product-name" ).textContent = "Producto no encontrado"; document.getElementById( "category" ).textContent = "Punto G Sex Shop"; document.getElementById( "description" ).textContent = "El producto que estás buscando no existe."; document.getElementById( "price" ).textContent = ""; } else { document.title = producto.nombre + " | Punto G Sex Shop"; document.getElementById( "product-name" ).textContent = producto.nombre; document.getElementById( "category" ).textContent = producto.categoria; document.getElementById( "description" ).textContent = producto.descripcion; document.getElementById( "price" ).textContent = producto.precio; const gallery = document.getElementById( "gallery" ); const dots = document.getElementById( "dots" ); producto.imagenes.forEach( function(imagen, index) { const img = document.createElement( "img" ); img.src = imagen; img.alt = producto.nombre; if (index === 0) { img.classList.add( "active" ); } gallery.insertBefore( img, gallery.querySelector( ".gallery-button" ) ); const dot = document.createElement( "button" );
         dot.type = "button"; dot.className = "dot";
         dot.setAttribute("aria-label", "Ver foto " + (index + 1));
         dot.addEventListener("click", function() { goToImage(index); }); if (index === 0) { dot.classList.add( "active" ); } dots.appendChild(dot); } ); } /* ========================= GALERIA ========================= */ let currentImage = 0; function goToImage(index) {
-  if (!producto) { return; }
+  if (!producto) return;
   const images = document.querySelectorAll("#gallery img");
   const dots = document.querySelectorAll("#dots .dot");
-  if (!images.length || index < 0 || index >= images.length) { return; }
-
+  if (!images.length || index < 0 || index >= images.length) return;
   images[currentImage].classList.remove("active");
-  if (dots[currentImage]) { dots[currentImage].classList.remove("active"); }
-
+  if (dots[currentImage]) dots[currentImage].classList.remove("active");
   currentImage = index;
   images[currentImage].classList.add("active");
-  if (dots[currentImage]) { dots[currentImage].classList.add("active"); }
+  if (dots[currentImage]) dots[currentImage].classList.add("active");
 }
 
 function changeImage(direction) { if (!producto) { return; } const images = document.querySelectorAll( "#gallery img" ); const dots = document.querySelectorAll( "#dots .dot" ); if (!images.length) { return; } images[ currentImage ].classList.remove( "active" ); if (dots[currentImage]) { dots[ currentImage ].classList.remove( "active" ); } currentImage += direction; if ( currentImage >= images.length ) { currentImage = 0; } if ( currentImage < 0 ) { currentImage = images.length - 1; } images[ currentImage ].classList.add( "active" ); if (dots[currentImage]) { dots[ currentImage ].classList.add( "active" ); } } /* ========================= WHATSAPP ========================= */ function comprar() { if (!producto) { return; } const telefono = "5491126473370"; const mensaje = "Hola! Quiero comprar " + producto.nombre + " en Punto G Sex Shop."; const url = "https://wa.me/" + telefono + "?text=" + encodeURIComponent( mensaje ); window.open( url, "_blank" ); } </script> </body> </html>  

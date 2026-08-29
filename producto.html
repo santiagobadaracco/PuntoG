@@ -1,26 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
 <meta charset="UTF-8">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Punto G | Producto</title>
 
 <meta
     name="description"
-    content="Punto G Sex Shop. Conocé nuestros productos."
+    content="Punto G Sex Shop. Tu placer tiene un punto."
 >
 
 <style>
-
-/* =====================================================
-   GENERAL
-===================================================== */
 
 * {
     margin: 0;
@@ -44,14 +38,9 @@ a {
     color: inherit;
 }
 
-button {
-    font-family: inherit;
-}
-
-
-/* =====================================================
+/* =========================
    HEADER
-===================================================== */
+========================= */
 
 header {
     position: sticky;
@@ -76,9 +65,7 @@ header {
     padding: 0 25px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 }
 
@@ -86,7 +73,6 @@ header {
     font-family: Georgia, serif;
 
     font-size: 25px;
-
     font-weight: bold;
 
     letter-spacing: 3px;
@@ -98,9 +84,6 @@ header {
 
 nav {
     display: flex;
-
-    align-items: center;
-
     gap: 28px;
 }
 
@@ -116,87 +99,24 @@ nav a:hover {
     color: #d94a75;
 }
 
-
-/* =====================================================
-   CARRITO
-===================================================== */
-
-.cart-link {
-    display: flex;
-
-    align-items: center;
-
-    gap: 6px;
-}
-
-.cart-count {
-    min-width: 18px;
-    height: 18px;
-
-    padding: 0 5px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background: #d94a75;
-
-    color: white;
-
-    font-size: 11px;
-
-    font-weight: bold;
-}
-
-
-/* =====================================================
+/* =========================
    CONTENEDOR
-===================================================== */
+========================= */
 
 .product-page {
     width: 100%;
-
-    max-width: 1200px;
+    max-width: 1100px;
 
     margin: auto;
 
-    padding: 55px 20px 100px;
+    padding: 70px 20px 100px;
 }
 
+/* =========================
+   PRODUCTO
+========================= */
 
-/* =====================================================
-   VOLVER
-===================================================== */
-
-.back-link {
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    margin-bottom: 35px;
-
-    color: #aaa0a6;
-
-    font-size: 14px;
-
-    transition: 0.2s;
-}
-
-.back-link:hover {
-    color: #d94a75;
-}
-
-
-/* =====================================================
-   PRODUCTO PRINCIPAL
-===================================================== */
-
-.product-detail {
+.product-container {
 
     display: grid;
 
@@ -204,21 +124,22 @@ nav a:hover {
         minmax(0, 1fr)
         minmax(0, 1fr);
 
-    gap: 55px;
+    gap: 60px;
 
     align-items: start;
 }
 
-
-/* =====================================================
+/* =========================
    GALERIA
-===================================================== */
+========================= */
 
 .product-gallery {
 
+    position: relative;
+
     width: 100%;
 
-    position: relative;
+    height: 560px;
 
     background:
         radial-gradient(
@@ -234,17 +155,7 @@ nav a:hover {
     overflow: hidden;
 }
 
-.main-image {
-    position: relative;
-
-    width: 100%;
-
-    height: 560px;
-
-    overflow: hidden;
-}
-
-.main-image img {
+.product-gallery img {
 
     width: 100%;
     height: 100%;
@@ -256,14 +167,11 @@ nav a:hover {
     display: none;
 }
 
-.main-image img.active {
+.product-gallery img.active {
     display: block;
 }
 
-
-/* =====================================================
-   FLECHAS
-===================================================== */
+/* FLECHAS */
 
 .gallery-button {
 
@@ -273,24 +181,23 @@ nav a:hover {
 
     transform: translateY(-50%);
 
-    width: 44px;
-    height: 44px;
+    width: 45px;
+    height: 45px;
 
     border: none;
 
     border-radius: 50%;
 
-    background: rgba(0, 0, 0, 0.7);
+    background:
+        rgba(0, 0, 0, 0.65);
 
     color: white;
 
     font-size: 27px;
 
-    line-height: 1;
-
     cursor: pointer;
 
-    z-index: 10;
+    z-index: 5;
 
     transition: 0.2s;
 }
@@ -299,85 +206,59 @@ nav a:hover {
     background: #d94a75;
 }
 
-.gallery-prev {
+.prev {
     left: 15px;
 }
 
-.gallery-next {
+.next {
     right: 15px;
 }
 
+/* DOTS */
 
-/* =====================================================
-   MINIATURAS
-===================================================== */
+.dots {
 
-.thumbnails {
+    position: absolute;
+
+    bottom: 18px;
+
+    left: 0;
+    right: 0;
 
     display: flex;
 
-    gap: 10px;
+    justify-content: center;
 
-    padding: 14px;
+    gap: 7px;
 
-    overflow-x: auto;
-
-    background: #151115;
-
-    border-top: 1px solid #30242b;
+    z-index: 5;
 }
 
-.thumbnail {
+.dot {
 
-    width: 75px;
-    height: 75px;
+    width: 8px;
+    height: 8px;
 
-    flex-shrink: 0;
+    border-radius: 50%;
 
-    border: 1px solid #3a2b33;
-
-    border-radius: 9px;
-
-    overflow: hidden;
-
-    cursor: pointer;
-
-    background: #100d10;
-
-    transition: 0.2s;
+    background:
+        rgba(255,255,255,0.4);
 }
 
-.thumbnail:hover {
-    border-color: #d94a75;
+.dot.active {
+    background: white;
 }
 
-.thumbnail.active {
-    border: 2px solid #d94a75;
-}
-
-.thumbnail img {
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: contain;
-
-    padding: 4px;
-}
-
-
-/* =====================================================
+/* =========================
    INFORMACION
-===================================================== */
+========================= */
 
 .product-details {
 
-    padding-top: 5px;
+    padding-top: 10px;
 }
 
-.product-category {
-
-    display: block;
+.category {
 
     color: #d94a75;
 
@@ -388,17 +269,15 @@ nav a:hover {
     letter-spacing: 2px;
 
     margin-bottom: 12px;
+
+    display: block;
 }
 
-.product-title {
+.product-details h1 {
 
     font-family: Georgia, serif;
 
-    font-size: clamp(
-        34px,
-        4vw,
-        50px
-    );
+    font-size: 42px;
 
     line-height: 1.15;
 
@@ -407,7 +286,7 @@ nav a:hover {
 
 .product-price {
 
-    font-size: 31px;
+    font-size: 30px;
 
     font-weight: bold;
 
@@ -420,273 +299,136 @@ nav a:hover {
 
     font-size: 15px;
 
-    line-height: 1.75;
-
-    white-space: pre-line;
+    line-height: 1.7;
 
     margin-bottom: 30px;
 }
 
-
-/* =====================================================
+/* =========================
    CARACTERISTICAS
-===================================================== */
+========================= */
 
 .features {
 
+    border-top: 1px solid #30242b;
+
+    border-bottom: 1px solid #30242b;
+
+    padding: 22px 0;
+
     margin-bottom: 30px;
-
-    padding: 22px;
-
-    background: #151115;
-
-    border: 1px solid #30242b;
-
-    border-radius: 14px;
 }
 
 .features h3 {
 
     font-family: Georgia, serif;
 
-    font-size: 21px;
-
     margin-bottom: 15px;
 }
 
 .features ul {
 
-    list-style: none;
+    padding-left: 20px;
+
+    color: #b7abb2;
 }
 
 .features li {
 
-    position: relative;
-
-    padding-left: 20px;
-
-    margin-bottom: 9px;
-
-    color: #b7abb2;
-
-    font-size: 14px;
+    margin-bottom: 8px;
 }
 
-.features li::before {
-
-    content: "•";
-
-    position: absolute;
-
-    left: 0;
-
-    color: #d94a75;
-
-    font-size: 18px;
-}
-
-
-/* =====================================================
-   ACCIONES
-===================================================== */
-
-.product-actions {
-
-    display: grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap: 12px;
-
-    margin-bottom: 20px;
-}
-
-.add-cart,
-.whatsapp-button {
-
-    min-height: 52px;
-
-    border-radius: 9px;
-
-    cursor: pointer;
-
-    font-size: 14px;
-
-    font-weight: bold;
-
-    transition: 0.2s;
-}
+/* =========================
+   BOTON CARRITO
+========================= */
 
 .add-cart {
 
-    border: 1px solid #d94a75;
+    width: 100%;
+
+    padding: 16px;
+
+    border: none;
+
+    border-radius: 9px;
 
     background: #d94a75;
 
     color: white;
+
+    font-weight: bold;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
 }
 
 .add-cart:hover {
 
     background: #ed628c;
 
-    border-color: #ed628c;
+    transform: translateY(-2px);
 }
 
-.whatsapp-button {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border: 1px solid #25d366;
-
-    background: transparent;
-
-    color: #25d366;
-}
-
-.whatsapp-button:hover {
-
-    background: #25d366;
-
-    color: white;
-}
-
-
-/* =====================================================
-   INFORMACION EXTRA
-===================================================== */
-
-.product-notice {
-
-    padding: 18px;
-
-    background: #110e11;
-
-    border-left: 3px solid #d94a75;
-
-    color: #968b92;
-
-    font-size: 13px;
-
-    line-height: 1.6;
-}
-
-
-/* =====================================================
-   PRODUCTO NO ENCONTRADO
-===================================================== */
-
-.not-found {
-
-    min-height: 500px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
-}
-
-.not-found h1 {
-
-    font-family: Georgia, serif;
-
-    font-size: 42px;
-
-    margin-bottom: 15px;
-}
-
-.not-found p {
-
-    color: #aaa0a6;
-
-    margin-bottom: 25px;
-}
-
-.not-found a {
+.back {
 
     display: inline-block;
 
-    padding: 13px 25px;
+    margin-top: 20px;
 
-    background: #d94a75;
+    color: #aaa0a6;
 
-    border-radius: 25px;
+    font-size: 14px;
+}
 
-    color: white;
+.back:hover {
+    color: #d94a75;
+}
+
+/* =========================
+   CARRITO
+========================= */
+
+.cart-link {
+
+    color: #d94a75;
 
     font-weight: bold;
 }
 
+/* =========================
+   FOOTER
+========================= */
 
-/* =====================================================
-   MENSAJE CARRITO
-===================================================== */
+footer {
 
-.cart-message {
+    padding: 55px 20px;
 
-    position: fixed;
+    text-align: center;
 
-    left: 50%;
+    color: #81767d;
 
-    bottom: 30px;
-
-    transform:
-        translateX(-50%)
-        translateY(100px);
-
-    background: #20161c;
-
-    border: 1px solid #d94a75;
-
-    color: white;
-
-    padding: 13px 22px;
-
-    border-radius: 30px;
-
-    font-size: 14px;
-
-    z-index: 2000;
-
-    opacity: 0;
-
-    transition:
-        opacity 0.3s ease,
-        transform 0.3s ease;
-
-    pointer-events: none;
+    font-size: 13px;
 }
 
-.cart-message.show {
+footer strong {
 
-    opacity: 1;
+    color: #f5eef2;
 
-    transform:
-        translateX(-50%)
-        translateY(0);
+    letter-spacing: 2px;
 }
 
-
-/* =====================================================
+/* =========================
    WHATSAPP
-===================================================== */
+========================= */
 
 .whatsapp {
 
     position: fixed;
 
     right: 20px;
-
     bottom: 20px;
 
     width: 58px;
@@ -706,134 +448,33 @@ nav a:hover {
     font-size: 25px;
 
     z-index: 999;
-
-    box-shadow:
-        0 5px 25px rgba(0, 0, 0, 0.4);
-
-    transition: 0.2s;
 }
 
-.whatsapp:hover {
+/* =========================
+   CELULAR
+========================= */
 
-    transform: scale(1.08);
-}
+@media (max-width: 800px) {
 
+    nav {
+        display: none;
+    }
 
-/* =====================================================
-   FOOTER
-===================================================== */
-
-footer {
-
-    padding: 55px 20px;
-
-    text-align: center;
-
-    color: #81767d;
-
-    font-size: 13px;
-
-    border-top: 1px solid #30242b;
-}
-
-footer strong {
-
-    color: #f5eef2;
-
-    letter-spacing: 2px;
-}
-
-
-/* =====================================================
-   TABLET
-===================================================== */
-
-@media (max-width: 900px) {
-
-    .product-detail {
+    .product-container {
 
         grid-template-columns: 1fr;
 
         gap: 35px;
     }
 
-    .product-details {
+    .product-gallery {
 
-        max-width: 750px;
-
-        margin: auto;
+        height: 450px;
     }
 
-}
-
-
-/* =====================================================
-   CELULAR
-===================================================== */
-
-@media (max-width: 620px) {
-
-    .nav {
-
-        height: 68px;
-
-        padding: 0 18px;
-    }
-
-    .logo {
-
-        font-size: 21px;
-
-        letter-spacing: 2px;
-    }
-
-    nav {
-
-        display: none;
-    }
-
-    .product-page {
-
-        padding:
-            35px 15px 70px;
-    }
-
-    .main-image {
-
-        height: 390px;
-    }
-
-    .main-image img {
-
-        padding: 15px;
-    }
-
-    .product-title {
+    .product-details h1 {
 
         font-size: 34px;
-    }
-
-    .product-price {
-
-        font-size: 27px;
-    }
-
-    .product-actions {
-
-        grid-template-columns: 1fr;
-    }
-
-    .thumbnail {
-
-        width: 65px;
-        height: 65px;
-    }
-
-    .whatsapp {
-
-        right: 15px;
-
-        bottom: 15px;
     }
 
 }
@@ -842,30 +483,21 @@ footer strong {
 
 </head>
 
-
 <body>
 
-
-<!-- =====================================================
-     HEADER
-===================================================== -->
+<!-- HEADER -->
 
 <header>
 
 <div class="nav">
 
-
-<a
-    href="index.html"
-    class="logo"
->
+<a href="index.html" class="logo">
 PUNTO <span>G</span>
 </a>
 
-
 <nav>
 
-<a href="index.html#inicio">
+<a href="index.html">
 Inicio
 </a>
 
@@ -873,89 +505,87 @@ Inicio
 Catálogo
 </a>
 
-<a href="index.html#envios">
-Envíos
-</a>
-
-<a href="index.html#contacto">
-Contacto
-</a>
-
-<a
-    href="carrito.html"
-    class="cart-link"
->
+<a href="carrito.html" class="cart-link">
 🛒 Carrito
-
-<span
-    id="cartCount"
-    class="cart-count"
->
-0
-</span>
-
 </a>
 
 </nav>
-
 
 </div>
 
 </header>
 
 
-<!-- =====================================================
-     CONTENIDO
-===================================================== -->
+<!-- PRODUCTO -->
 
-<main
-    class="product-page"
-    id="productPage"
+<main class="product-page">
+
+<div
+    class="product-container"
+    id="productContainer"
 >
 
+<!-- GALERIA -->
 
-<!-- =====================================================
-     PRODUCTO
-===================================================== -->
-
-<div id="productContent">
+<div
+    class="product-gallery"
+    id="productGallery"
+>
 
 </div>
 
+
+<!-- INFORMACION -->
+
+<div class="product-details">
+
+<span
+    class="category"
+    id="productCategory"
+>
+</span>
+
+<h1 id="productName">
+</h1>
+
+<div
+    class="product-price"
+    id="productPrice"
+>
+</div>
+
+<p
+    class="product-description"
+    id="productDescription"
+>
+</p>
+
+<div
+    class="features"
+    id="productFeatures"
+>
+</div>
+
+<button
+    class="add-cart"
+    onclick="agregarAlCarrito()"
+>
+    Agregar al carrito
+</button>
+
+<a
+    href="index.html#catalogo"
+    class="back"
+>
+    ← Volver al catálogo
+</a>
+
+</div>
+
+</div>
 
 </main>
 
-
-<!-- =====================================================
-     MENSAJE CARRITO
-===================================================== -->
-
-<div
-    id="cartMessage"
-    class="cart-message"
->
-Producto agregado al carrito
-</div>
-
-
-<!-- =====================================================
-     WHATSAPP
-===================================================== -->
-
-<a
-    class="whatsapp"
-    href="https://wa.me/5491126473370"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Contactar por WhatsApp"
->
-☎
-</a>
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
 
 <footer>
 
@@ -978,11 +608,21 @@ WhatsApp: 11 2647-3370
 </footer>
 
 
+<a
+    class="whatsapp"
+    href="https://wa.me/5491126473370"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+☎
+</a>
+
+
 <script>
 
-/* =====================================================
+/* ==================================================
    BASE DE DATOS DE PRODUCTOS
-===================================================== */
+================================================== */
 
 const productos = {
 
@@ -991,13 +631,13 @@ const productos = {
         id: "triple",
 
         nombre:
-        "Triple Estimulador Gyrating & Vibrating Rabbit Vibe",
+            "Triple Estimulador Gyrating & Vibrating Rabbit Vibe",
 
         categoria:
-        "Estimuladores",
+            "Estimuladores",
 
         precio:
-        145000,
+            145000,
 
         imagenes: [
 
@@ -1012,17 +652,11 @@ const productos = {
         ],
 
         descripcion:
-`Triple estimulador de silicona + ABS.
-
-Diseñado para ofrecer diferentes formas de estimulación y una experiencia personalizada.
-
-Su diseño tipo rabbit combina diferentes puntos de estimulación y cuenta con múltiples funciones de vibración.
-
-Producto USB recargable, práctico y pensado para disfrutar con comodidad.`,
+            "Triple estimulador de silicona + ABS diseñado para ofrecer diferentes formas de estimulación. Cuenta con 18 funciones de vibración y es recargable mediante USB.",
 
         caracteristicas: [
 
-            "Material: silicona + ABS",
+            "Triple estimulador de silicona + ABS",
 
             "18 funciones de vibración",
 
@@ -1030,7 +664,7 @@ Producto USB recargable, práctico y pensado para disfrutar con comodidad.`,
 
             "Incluye cargador",
 
-            "Tiempo de carga: aproximadamente 120 minutos",
+            "Tiempo de carga: 120 minutos",
 
             "Tiempo de uso: aproximadamente 60 minutos"
 
@@ -1044,13 +678,13 @@ Producto USB recargable, práctico y pensado para disfrutar con comodidad.`,
         id: "fiorella",
 
         nombre:
-        "Fiorella 1",
+            "Fiorella 1",
 
         categoria:
-        "Doble estimulación",
+            "Doble estimulación",
 
         precio:
-        65000,
+            65000,
 
         imagenes: [
 
@@ -1058,40 +692,30 @@ Producto USB recargable, práctico y pensado para disfrutar con comodidad.`,
 
             "img/Fiorella 1 foto 2.jpeg",
 
-            "img/Fiorella 1 foto 3.jpeg",
+            "img/Fiorella 1 Foto 3.jpeg",
 
             "img/Fiorella 1 foto 4.jpeg"
 
         ],
 
         descripcion:
-`¿Buscás un juguete para descubrirte y conocerte mejor?
-
-Este vibrador recargable de doble estimulación te permitirá explorar diferentes intensidades y sensaciones.
-
-Su material de silicona aterciopelada está diseñado para brindar una experiencia confortable.
-
-Cuenta con estimulador clitorial y diseño vaginal curvo para favorecer la estimulación del Punto G.
-
-Su diseño ergonómico permite utilizarlo cómodamente y disfrutar de sus diferentes funciones.`,
+            "Vibrador recargable de doble estimulación con diseño ergonómico. Su construcción en silicona aterciopelada y sus dos motores permiten combinar diferentes formas de estimulación.",
 
         caracteristicas: [
 
             "Totalmente silencioso y discreto",
 
-            "Color: fucsia",
-
-            "Diseño ergonómico vaginal + Punto G + clítoris",
+            "Diseño ergonómico vaginal + punto G + clítoris",
 
             "10 ritmos diferentes de vibración",
 
             "2 motores",
 
-            "Material de silicona aterciopelada",
+            "Material: silicona aterciopelada",
 
-            "Medidas: 18,5 cm x 3,3 cm",
+            "Color: fucsia",
 
-            "Recargable"
+            "Medidas: 18,5 cm x 3,3 cm"
 
         ]
 
@@ -1103,13 +727,13 @@ Su diseño ergonómico permite utilizarlo cómodamente y disfrutar de sus difere
         id: "ana5",
 
         nombre:
-        "ANA 5 - ST-TOY-035",
+            "ANA 5 - ST-TOY-035",
 
         categoria:
-        "Succión + vibración",
+            "Succión + vibración",
 
         precio:
-        100000,
+            100000,
 
         imagenes: [
 
@@ -1120,13 +744,7 @@ Su diseño ergonómico permite utilizarlo cómodamente y disfrutar de sus difere
         ],
 
         descripcion:
-`SEX THERAPY ANA 5.
-
-Dispositivo recargable que combina succión y vibración para ofrecer diferentes modos de estimulación.
-
-Para encender o apagar el dispositivo, mantené presionado el botón durante aproximadamente 1,5 segundos.
-
-Cuenta con diferentes modos de vibración que pueden seleccionarse mediante el botón de encendido.`,
+            "Sex Therapy ANA 5 con funciones de succión y vibración. Es recargable y cuenta con diferentes modos de vibración.",
 
         caracteristicas: [
 
@@ -1146,7 +764,7 @@ Cuenta con diferentes modos de vibración que pueden seleccionarse mediante el b
 
             "Peso: 78 g",
 
-            "El control utiliza 1 pila CR2032 (no incluida)"
+            "Control: 1 pila CR2032 no incluida"
 
         ]
 
@@ -1155,413 +773,356 @@ Cuenta con diferentes modos de vibración que pueden seleccionarse mediante el b
 };
 
 
-/* =====================================================
-   OBTENER ID DE LA URL
-===================================================== */
+/* ==================================================
+   OBTENER PRODUCTO DE LA URL
+================================================== */
 
-function obtenerProductoId() {
+const parametros =
+    new URLSearchParams(
+        window.location.search
+    );
 
-    const parametros =
-        new URLSearchParams(
-            window.location.search
-        );
+const id =
+    parametros.get("id");
 
-    return parametros.get("id");
+
+const producto =
+    productos[id];
+
+
+/* ==================================================
+   SI NO EXISTE
+================================================== */
+
+if (!producto) {
+
+    document.getElementById(
+        "productContainer"
+    ).innerHTML = `
+
+        <div style="
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 100px 20px;
+        ">
+
+            <h1>
+                Producto no encontrado
+            </h1>
+
+            <br>
+
+            <a
+                href="index.html#catalogo"
+                style="color:#d94a75;"
+            >
+                Volver al catálogo
+            </a>
+
+        </div>
+
+    `;
+
+} else {
+
+    cargarProducto(producto);
 
 }
 
 
-/* =====================================================
-   FORMATEAR PRECIO
-===================================================== */
+/* ==================================================
+   CARGAR PRODUCTO
+================================================== */
 
-function formatearPrecio(precio) {
-
-    return "$" +
-        precio.toLocaleString(
-            "es-AR"
-        );
-
-}
-
-
-/* =====================================================
-   MOSTRAR PRODUCTO
-===================================================== */
-
-function mostrarProducto() {
-
-    const id =
-        obtenerProductoId();
-
-    const producto =
-        productos[id];
-
-    const contenedor =
-        document.getElementById(
-            "productContent"
-        );
-
-
-    /* PRODUCTO NO ENCONTRADO */
-
-    if (!producto) {
-
-        contenedor.innerHTML = `
-
-            <div class="not-found">
-
-                <h1>
-                    Producto no encontrado
-                </h1>
-
-                <p>
-                    El producto que buscás
-                    no existe o ya no está disponible.
-                </p>
-
-                <a href="index.html#catalogo">
-                    Volver al catálogo
-                </a>
-
-            </div>
-
-        `;
-
-        return;
-
-    }
-
-
-    /* CAMBIAR TITULO */
+function cargarProducto(producto) {
 
     document.title =
         producto.nombre +
         " | Punto G";
 
 
-    /* CARACTERISTICAS */
-
-    const caracteristicasHTML =
-        producto.caracteristicas
-        .map(
-            function(caracteristica) {
-
-                return `
-                    <li>
-                        ${caracteristica}
-                    </li>
-                `;
-
-            }
-        )
-        .join("");
-
-
-    /* MINIATURAS */
-
-    const thumbnailsHTML =
-        producto.imagenes
-        .map(
-            function(imagen, index) {
-
-                return `
-
-                    <button
-                        type="button"
-                        class="thumbnail
-                        ${index === 0 ? "active" : ""}"
-                        onclick="seleccionarImagen(${index})"
-                        aria-label="Ver imagen ${index + 1}"
-                    >
-
-                        <img
-                            src="${imagen}"
-                            alt="${producto.nombre}"
-                        >
-
-                    </button>
-
-                `;
-
-            }
-        )
-        .join("");
-
-
-    /* IMAGENES PRINCIPALES */
-
-    const imagenesHTML =
-        producto.imagenes
-        .map(
-            function(imagen, index) {
-
-                return `
-
-                    <img
-                        src="${imagen}"
-                        class="${index === 0 ? "active" : ""}"
-                        alt="${producto.nombre}"
-                    >
-
-                `;
-
-            }
-        )
-        .join("");
-
-
-    /* CONTENIDO */
-
-    contenedor.innerHTML = `
-
-        <a
-            href="index.html#catalogo"
-            class="back-link"
-        >
-            ← Volver al catálogo
-        </a>
-
-
-        <div class="product-detail">
-
-
-            <!-- GALERIA -->
-
-            <div class="product-gallery">
-
-
-                <div class="main-image">
-
-                    ${imagenesHTML}
-
-
-                    <button
-                        type="button"
-                        class="gallery-button gallery-prev"
-                        onclick="cambiarImagen(-1)"
-                        aria-label="Imagen anterior"
-                    >
-                        ‹
-                    </button>
-
-
-                    <button
-                        type="button"
-                        class="gallery-button gallery-next"
-                        onclick="cambiarImagen(1)"
-                        aria-label="Imagen siguiente"
-                    >
-                        ›
-                    </button>
-
-                </div>
-
-
-                <div class="thumbnails">
-
-                    ${thumbnailsHTML}
-
-                </div>
-
-
-            </div>
-
-
-            <!-- INFORMACION -->
-
-            <div class="product-details">
-
-
-                <span class="product-category">
-                    ${producto.categoria}
-                </span>
-
-
-                <h1 class="product-title">
-                    ${producto.nombre}
-                </h1>
-
-
-                <div class="product-price">
-                    ${formatearPrecio(producto.precio)}
-                </div>
-
-
-                <div class="product-description">
-                    ${producto.descripcion}
-                </div>
-
-
-                <div class="features">
-
-                    <h3>
-                        Características
-                    </h3>
-
-                    <ul>
-                        ${caracteristicasHTML}
-                    </ul>
-
-                </div>
-
-
-                <!-- ACCIONES -->
-
-                <div class="product-actions">
-
-
-                    <button
-                        type="button"
-                        class="add-cart"
-                        onclick="agregarAlCarrito()"
-                    >
-                        🛒 Agregar al carrito
-                    </button>
-
-
-                    <a
-                        href="https://wa.me/5491126473370"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="whatsapp-button"
-                    >
-                        Consultar por WhatsApp
-                    </a>
-
-
-                </div>
-
-
-                <div class="product-notice">
-
-                    📦 Envíos discretos y packaging
-                    sin referencias explícitas al contenido.
-
-                    <br><br>
-
-                    🔒 Cuidamos tu privacidad durante
-                    todo el proceso de compra.
-
-                </div>
-
-
-            </div>
-
-
-        </div>
-
-    `;
-
-}
-
-
-/* =====================================================
-   GALERIA
-===================================================== */
-
-let imagenActual = 0;
-
-
-function seleccionarImagen(indice) {
-
-    const imagenes =
-        document.querySelectorAll(
-            ".main-image img"
-        );
-
-    const miniaturas =
-        document.querySelectorAll(
-            ".thumbnail"
+    document.getElementById(
+        "productName"
+    ).textContent =
+        producto.nombre;
+
+
+    document.getElementById(
+        "productCategory"
+    ).textContent =
+        producto.categoria;
+
+
+    document.getElementById(
+        "productPrice"
+    ).textContent =
+        "$" +
+        producto.precio.toLocaleString(
+            "es-AR"
         );
 
 
-    if (
-        !imagenes.length
-    ) {
-        return;
-    }
+    document.getElementById(
+        "productDescription"
+    ).textContent =
+        producto.descripcion;
 
 
-    imagenActual = indice;
+    /* GALERIA */
+
+    const gallery =
+        document.getElementById(
+            "productGallery"
+        );
 
 
-    if (
-        imagenActual >= imagenes.length
-    ) {
-
-        imagenActual = 0;
-
-    }
-
-
-    if (
-        imagenActual < 0
-    ) {
-
-        imagenActual =
-            imagenes.length - 1;
-
-    }
-
-
-    imagenes.forEach(
+    producto.imagenes.forEach(
         function(imagen, index) {
 
-            imagen.classList.toggle(
-                "active",
-                index === imagenActual
-            );
+            const img =
+                document.createElement("img");
+
+            img.src = imagen;
+
+            img.alt =
+                producto.nombre;
+
+            if (index === 0) {
+
+                img.classList.add(
+                    "active"
+                );
+
+            }
+
+            gallery.appendChild(img);
 
         }
     );
 
 
-    miniaturas.forEach(
-        function(miniatura, index) {
+    /* BOTONES GALERIA */
 
-            miniatura.classList.toggle(
-                "active",
-                index === imagenActual
-            );
+    if (producto.imagenes.length > 1) {
+
+        const prev =
+            document.createElement("button");
+
+        prev.className =
+            "gallery-button prev";
+
+        prev.innerHTML = "‹";
+
+        prev.onclick =
+            function() {
+
+                cambiarImagen(-1);
+
+            };
+
+
+        const next =
+            document.createElement("button");
+
+        next.className =
+            "gallery-button next";
+
+        next.innerHTML = "›";
+
+        next.onclick =
+            function() {
+
+                cambiarImagen(1);
+
+            };
+
+
+        gallery.appendChild(prev);
+
+        gallery.appendChild(next);
+
+
+        /* DOTS */
+
+        const dots =
+            document.createElement("div");
+
+        dots.className = "dots";
+
+
+        producto.imagenes.forEach(
+            function(imagen, index) {
+
+                const dot =
+                    document.createElement("span");
+
+                dot.className = "dot";
+
+                if (index === 0) {
+
+                    dot.classList.add(
+                        "active"
+                    );
+
+                }
+
+                dots.appendChild(dot);
+
+            }
+        );
+
+
+        gallery.appendChild(dots);
+
+    }
+
+
+    /* CARACTERISTICAS */
+
+    const features =
+        document.getElementById(
+            "productFeatures"
+        );
+
+
+    let html = `
+        <h3>Características</h3>
+        <ul>
+    `;
+
+
+    producto.caracteristicas.forEach(
+        function(item) {
+
+            html += `
+                <li>
+                    ${item}
+                </li>
+            `;
 
         }
     );
 
+
+    html += `
+        </ul>
+    `;
+
+
+    features.innerHTML = html;
+
 }
 
 
-function cambiarImagen(direccion) {
+/* ==================================================
+   CAMBIAR IMAGEN
+================================================== */
 
-    seleccionarImagen(
-        imagenActual + direccion
+function cambiarImagen(direction) {
+
+    const gallery =
+        document.getElementById(
+            "productGallery"
+        );
+
+
+    const images =
+        gallery.querySelectorAll(
+            "img"
+        );
+
+
+    const dots =
+        gallery.querySelectorAll(
+            ".dot"
+        );
+
+
+    let current = 0;
+
+
+    images.forEach(
+        function(image, index) {
+
+            if (
+                image.classList.contains(
+                    "active"
+                )
+            ) {
+
+                current = index;
+
+            }
+
+        }
     );
 
+
+    images[current].classList.remove(
+        "active"
+    );
+
+
+    if (dots[current]) {
+
+        dots[current].classList.remove(
+            "active"
+        );
+
+    }
+
+
+    current += direction;
+
+
+    if (current >= images.length) {
+
+        current = 0;
+
+    }
+
+
+    if (current < 0) {
+
+        current =
+            images.length - 1;
+
+    }
+
+
+    images[current].classList.add(
+        "active"
+    );
+
+
+    if (dots[current]) {
+
+        dots[current].classList.add(
+            "active"
+        );
+
+    }
+
 }
 
 
-/* =====================================================
+/* ==================================================
    AGREGAR AL CARRITO
-===================================================== */
+================================================== */
 
 function agregarAlCarrito() {
 
-    const id =
-        obtenerProductoId();
-
-    const producto =
-        productos[id];
-
-
     if (!producto) {
+
         return;
+
     }
 
 
     let carrito =
         JSON.parse(
             localStorage.getItem(
-                "puntoGCarrito"
+                "carrito"
             )
         ) || [];
 
@@ -1584,20 +1145,15 @@ function agregarAlCarrito() {
 
         carrito.push({
 
-            id:
-                producto.id,
+            id: producto.id,
 
-            nombre:
-                producto.nombre,
+            nombre: producto.nombre,
 
-            precio:
-                producto.precio,
+            precio: producto.precio,
 
-            imagen:
-                producto.imagenes[0],
+            imagen: producto.imagenes[0],
 
-            cantidad:
-                1
+            cantidad: 1
 
         });
 
@@ -1605,107 +1161,18 @@ function agregarAlCarrito() {
 
 
     localStorage.setItem(
-        "puntoGCarrito",
+        "carrito",
         JSON.stringify(carrito)
     );
 
 
-    actualizarContador();
-
-    mostrarMensaje();
-
-}
-
-
-/* =====================================================
-   CONTADOR
-===================================================== */
-
-function actualizarContador() {
-
-    const carrito =
-        JSON.parse(
-            localStorage.getItem(
-                "puntoGCarrito"
-            )
-        ) || [];
-
-
-    const cantidad =
-        carrito.reduce(
-            function(total, producto) {
-
-                return total +
-                    producto.cantidad;
-
-            },
-            0
-        );
-
-
-    const contador =
-        document.getElementById(
-            "cartCount"
-        );
-
-
-    if (contador) {
-
-        contador.textContent =
-            cantidad;
-
-    }
+    window.location.href =
+        "carrito.html";
 
 }
-
-
-/* =====================================================
-   MENSAJE
-===================================================== */
-
-function mostrarMensaje() {
-
-    const mensaje =
-        document.getElementById(
-            "cartMessage"
-        );
-
-
-    mensaje.classList.add(
-        "show"
-    );
-
-
-    setTimeout(
-        function() {
-
-            mensaje.classList.remove(
-                "show"
-            );
-
-        },
-        1800
-    );
-
-}
-
-
-/* =====================================================
-   INICIAR
-===================================================== */
-
-document.addEventListener(
-    "DOMContentLoaded",
-    function() {
-
-        mostrarProducto();
-
-        actualizarContador();
-
-    }
-);
 
 </script>
 
 </body>
+
 </html>

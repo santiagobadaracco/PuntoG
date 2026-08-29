@@ -1,970 +1,1393 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Punto G | Sex Shop</title>
-
-  <meta
-    name="description"
-    content="Punto G Sex Shop. Productos para disfrutar, explorar y compartir. Envíos discretos."
-  >
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0d0b0d;
-      color: #f5eef2;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* HEADER */
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(13, 11, 13, 0.96);
-      border-bottom: 1px solid #2d242a;
-      backdrop-filter: blur(10px);
-    }
-
-    .navbar {
-      max-width: 1200px;
-      margin: auto;
-      height: 75px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 20px;
-    }
-
-    .logo {
-      font-family: Georgia, serif;
-      font-size: 26px;
-      letter-spacing: 2px;
-      font-weight: bold;
-    }
-
-    .logo span {
-      color: #c83f68;
-    }
-
-    nav {
-      display: flex;
-      gap: 25px;
-      font-size: 14px;
-    }
-
-    nav a:hover {
-      color: #e45c82;
-    }
-
-    .cart-button {
-      border: 1px solid #c83f68;
-      background: transparent;
-      color: white;
-      padding: 10px 15px;
-      border-radius: 25px;
-      cursor: pointer;
-    }
-
-    /* HERO */
-
-    .hero {
-      min-height: 520px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 60px 20px;
-
-      background:
-        radial-gradient(circle at center, #32121f 0%, #150d12 45%, #0d0b0d 75%);
-    }
-
-    .hero-content {
-      max-width: 700px;
-    }
-
-    .hero h1 {
-      font-family: Georgia, serif;
-      font-size: clamp(45px, 8vw, 82px);
-      margin-bottom: 15px;
-    }
-
-    .hero h1 span {
-      color: #d84872;
-    }
-
-    .hero p {
-      color: #c9bdc3;
-      font-size: 18px;
-      line-height: 1.6;
-      margin-bottom: 30px;
-    }
-
-    .btn {
-      display: inline-block;
-      background: #c83f68;
-      color: white;
-      padding: 14px 28px;
-      border-radius: 30px;
-      font-weight: bold;
-      transition: 0.2s;
-    }
-
-    .btn:hover {
-      background: #e1517b;
-      transform: translateY(-2px);
-    }
-
-    /* BENEFICIOS */
-
-    .benefits {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 45px 20px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      text-align: center;
-    }
-
-    .benefit {
-      padding: 25px;
-      background: #151115;
-      border: 1px solid #2d242a;
-      border-radius: 15px;
-    }
-
-    .benefit h3 {
-      margin-bottom: 8px;
-    }
-
-    .benefit p {
-      color: #aaa0a6;
-      font-size: 14px;
-    }
-
-    /* CATALOGO */
-
-    .catalog {
-      max-width: 1200px;
-      margin: auto;
-      padding: 70px 20px;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 35px;
-    }
-
-    .section-title h2 {
-      font-family: Georgia, serif;
-      font-size: 38px;
-      margin-bottom: 10px;
-    }
-
-    .section-title p {
-      color: #aaa0a6;
-    }
-
-    .filters {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 35px;
-    }
-
-    .filter {
-      background: transparent;
-      border: 1px solid #40333b;
-      color: #eee;
-      padding: 9px 17px;
-      border-radius: 25px;
-      cursor: pointer;
-    }
-
-    .filter.active,
-    .filter:hover {
-      background: #c83f68;
-      border-color: #c83f68;
-    }
-
-    .products {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 22px;
-    }
-
-    .product {
-      background: #151115;
-      border: 1px solid #2d242a;
-      border-radius: 15px;
-      overflow: hidden;
-      transition: 0.2s;
-    }
-
-    .product:hover {
-      transform: translateY(-5px);
-      border-color: #633345;
-    }
-
-    .product-image {
-      height: 250px;
-      background: linear-gradient(135deg, #25151d, #100d10);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #71656c;
-      font-size: 14px;
-    }
-
-    .product-info {
-      padding: 18px;
-    }
-
-    .product-category {
-      color: #c83f68;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .product h3 {
-      margin: 8px 0;
-      font-size: 17px;
-    }
-
-    .price {
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
-
-    .add-cart {
-      width: 100%;
-      padding: 11px;
-      background: transparent;
-      border: 1px solid #c83f68;
-      color: white;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    .add-cart:hover {
-      background: #c83f68;
-    }
-
-    /* INFO */
-
-    .shipping {
-      background: #151115;
-      border-top: 1px solid #2d242a;
-      border-bottom: 1px solid #2d242a;
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    .shipping h2 {
-      font-family: Georgia, serif;
-      font-size: 34px;
-      margin-bottom: 15px;
-    }
-
-    .shipping p {
-      color: #aaa0a6;
-      max-width: 600px;
-      margin: auto;
-      line-height: 1.6;
-    }
-
-    /* FOOTER */
-
-    footer {
-      padding: 45px 20px;
-      text-align: center;
-      color: #8d8389;
-      font-size: 13px;
-    }
-
-    /* CARRITO */
-
-    .cart {
-      position: fixed;
-      right: -420px;
-      top: 0;
-      height: 100vh;
-      width: 390px;
-      max-width: 90%;
-      background: #151115;
-      border-left: 1px solid #3a2b34;
-      z-index: 2000;
-      padding: 25px;
-      transition: 0.3s;
-      overflow-y: auto;
-    }
-
-    .cart.open {
-      right: 0;
-    }
-
-    .cart-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 25px;
-    }
-
-    .close-cart {
-      background: none;
-      border: none;
-      color: white;
-      font-size: 25px;
-      cursor: pointer;
-    }
-
-    .cart-item {
-      border-bottom: 1px solid #30262c;
-      padding: 15px 0;
-    }
-
-    .cart-item strong {
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    .cart-total {
-      margin-top: 25px;
-      font-size: 20px;
-      font-weight: bold;
-    }
-
-    .checkout {
-      width: 100%;
-      margin-top: 20px;
-      border: none;
-      cursor: pointer;
-    }
-
-    /* WHATSAPP */
-
-    .whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25d366;
-      color: white;
-      width: 55px;
-      height: 55px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 25px;
-      z-index: 1500;
-    }
-
-    /* RESPONSIVE */
-
-    @media (max-width: 900px) {
-      .products {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .benefits {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 600px) {
-
-      nav {
-        display: none;
-      }
-
-      .navbar {
-        height: 65px;
-      }
-
-      .products {
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-      }
-
-      .product-image {
-        height: 190px;
-      }
-
-      .product-info {
-        padding: 13px;
-      }
-
-      .product h3 {
-        font-size: 14px;
-      }
-
-      .price {
-        font-size: 17px;
-      }
-
-      .hero {
-        min-height: 450px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Punto G | Sex Shop</title>
+
+    <meta
+        name="description"
+        content="Punto G Sex Shop. Tu placer tiene un punto."
+    >
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #0d0b0d;
+            color: #f5eef2;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* =====================================
+           HEADER
+        ===================================== */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(13, 11, 13, 0.96);
+
+            border-bottom: 1px solid #30242b;
+
+            backdrop-filter: blur(10px);
+        }
+
+
+        .nav {
+            max-width: 1200px;
+
+            height: 75px;
+
+            margin: auto;
+
+            padding: 0 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+
+        .logo {
+            font-family: Georgia, serif;
+
+            font-size: 25px;
+
+            font-weight: bold;
+
+            letter-spacing: 3px;
+        }
+
+
+        .logo span {
+            color: #d94a75;
+        }
+
+
+        nav {
+            display: flex;
+
+            gap: 25px;
+        }
+
+
+        nav a {
+            color: #eee;
+
+            font-size: 14px;
+
+            transition: 0.2s;
+        }
+
+
+        nav a:hover {
+            color: #d94a75;
+        }
+
+
+
+        /* =====================================
+           HERO
+        ===================================== */
+
+        .hero {
+            min-height: 600px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 50px 20px;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    #421827 0%,
+                    #1b1016 40%,
+                    #0d0b0d 75%
+                );
+        }
+
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+
+        .hero h1 {
+            font-family: Georgia, serif;
+
+            font-size: clamp(
+                55px,
+                10vw,
+                100px
+            );
+
+            letter-spacing: 5px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .hero h1 span {
+            color: #d94a75;
+        }
+
+
+        .hero p {
+            color: #c6b9c0;
+
+            font-size: 19px;
+
+            line-height: 1.6;
+
+            margin-bottom: 35px;
+        }
+
+
+        .button {
+            display: inline-block;
+
+            background: #d94a75;
+
+            color: white;
+
+            padding: 15px 32px;
+
+            border-radius: 30px;
+
+            font-weight: bold;
+
+            transition: 0.2s;
+        }
+
+
+        .button:hover {
+            background: #ed628c;
+
+            transform: translateY(-2px);
+        }
+
+
+
+        /* =====================================
+           BENEFICIOS
+        ===================================== */
+
+        .benefits {
+            max-width: 1100px;
+
+            margin: auto;
+
+            padding: 60px 20px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .benefit {
+            background: #151115;
+
+            border: 1px solid #30242b;
+
+            border-radius: 15px;
+
+            padding: 30px;
+
+            text-align: center;
+        }
+
+
+        .benefit h3 {
+            margin-bottom: 10px;
+        }
+
+
+        .benefit p {
+            color: #a99da4;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+        }
+
+
+
+        /* =====================================
+           CATALOGO
+        ===================================== */
+
+        .catalog {
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding: 80px 20px;
+        }
+
+
+        .title {
+            text-align: center;
+
+            margin-bottom: 45px;
+        }
+
+
+        .title h2 {
+            font-family: Georgia, serif;
+
+            font-size: 40px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .title p {
+            color: #aaa0a6;
+        }
+
+
+
+        /* =====================================
+           PRODUCTOS
+        ===================================== */
+
+        .products {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+
+        .product {
+            background: #151115;
+
+            border: 1px solid #30242b;
+
+            border-radius: 16px;
+
+            overflow: hidden;
+
+            transition: 0.25s;
+        }
+
+
+        .product:hover {
+            transform: translateY(-6px);
+
+            border-color: #74374c;
+        }
+
+
+
+        /* =====================================
+           GALERIA
+        ===================================== */
+
+        .gallery {
+            position: relative;
+
+            width: 100%;
+
+            height: 360px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #291821,
+                    #100d10
+                );
+
+            overflow: hidden;
+        }
+
+
+        .gallery img {
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            display: none;
+        }
+
+
+        .gallery img.active {
+            display: block;
+        }
+
+
+
+        /* BOTONES GALERIA */
+
+        .gallery-button {
+            position: absolute;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            width: 38px;
+
+            height: 38px;
+
+            border-radius: 50%;
+
+            border: none;
+
+            background: rgba(
+                0,
+                0,
+                0,
+                0.65
+            );
+
+            color: white;
+
+            font-size: 22px;
+
+            cursor: pointer;
+
+            z-index: 5;
+        }
+
+
+        .gallery-button:hover {
+            background: #d94a75;
+        }
+
+
+        .prev {
+            left: 12px;
+        }
+
+
+        .next {
+            right: 12px;
+        }
+
+
+
+        /* INDICADORES */
+
+        .dots {
+            position: absolute;
+
+            bottom: 12px;
+
+            left: 0;
+
+            right: 0;
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 6px;
+
+            z-index: 5;
+        }
+
+
+        .dot {
+            width: 7px;
+
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: rgba(
+                255,
+                255,
+                255,
+                0.45
+            );
+        }
+
+
+        .dot.active {
+            background: white;
+        }
+
+
+
+        /* =====================================
+           INFORMACION PRODUCTO
+        ===================================== */
+
+        .product-info {
+            padding: 22px;
+        }
+
+
+        .category {
+            color: #d94a75;
+
+            font-size: 11px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1.5px;
+        }
+
+
+        .product h3 {
+            font-family: Georgia, serif;
+
+            font-size: 21px;
+
+            margin: 10px 0;
+        }
+
+
+        .description {
+            color: #a99da4;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+
+            margin-bottom: 18px;
+        }
+
+
+        .price {
+            font-size: 22px;
+
+            font-weight: bold;
+
+            margin-bottom: 18px;
+        }
+
+
+        .consult-price {
+            color: #d94a75;
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            margin-bottom: 18px;
+        }
+
+
+        .buy {
+            width: 100%;
+
+            padding: 13px;
+
+            border: 1px solid #d94a75;
+
+            background: #d94a75;
+
+            color: white;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            font-weight: bold;
+
+            font-size: 14px;
+
+            transition: 0.2s;
+        }
+
+
+        .buy:hover {
+            background: #ed628c;
+
+            border-color: #ed628c;
+        }
+
+
+
+        /* =====================================
+           ENVÍOS
+        ===================================== */
+
+        .shipping {
+            padding: 80px 20px;
+
+            text-align: center;
+
+            background: #151115;
+
+            border-top: 1px solid #30242b;
+
+            border-bottom: 1px solid #30242b;
+        }
+
+
+        .shipping h2 {
+            font-family: Georgia, serif;
+
+            font-size: 38px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .shipping p {
+            max-width: 650px;
+
+            margin: auto;
+
+            color: #aaa0a6;
+
+            line-height: 1.6;
+        }
+
+
+
+        /* =====================================
+           FOOTER
+        ===================================== */
+
+        footer {
+            padding: 50px 20px;
+
+            text-align: center;
+
+            color: #81767d;
+
+            font-size: 13px;
+        }
+
+
+
+        /* =====================================
+           WHATSAPP
+        ===================================== */
+
+        .whatsapp {
+            position: fixed;
+
+            right: 20px;
+
+            bottom: 20px;
+
+            width: 58px;
+
+            height: 58px;
+
+            border-radius: 50%;
+
+            background: #25d366;
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 25px;
+
+            z-index: 999;
+        }
+
+
+
+        /* =====================================
+           RESPONSIVE
+        ===================================== */
+
+        @media (max-width: 900px) {
+
+            .products {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+
+            .benefits {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            nav {
+                display: none;
+            }
+
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+
+            .gallery {
+                height: 330px;
+            }
+
+
+            .hero {
+                min-height: 500px;
+            }
+
+
+            .hero p {
+                font-size: 16px;
+            }
+
+        }
+
+    </style>
+
 </head>
+
 
 <body>
 
+
+<!-- =====================================
+     HEADER
+===================================== -->
+
 <header>
 
-  <div class="navbar">
+    <div class="nav">
 
-    <div class="logo">
-      PUNTO <span>G</span>
+        <div class="logo">
+            PUNTO <span>G</span>
+        </div>
+
+
+        <nav>
+
+            <a href="#inicio">
+                Inicio
+            </a>
+
+            <a href="#catalogo">
+                Catálogo
+            </a>
+
+            <a href="#envios">
+                Envíos
+            </a>
+
+            <a href="#contacto">
+                Contacto
+            </a>
+
+        </nav>
+
     </div>
-
-    <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="#catalogo">Catálogo</a>
-      <a href="#envios">Envíos</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-
-    <button class="cart-button" onclick="toggleCart()">
-      🛒 Carrito (<span id="cart-count">0</span>)
-    </button>
-
-  </div>
 
 </header>
 
 
-<!-- HERO -->
 
-<section class="hero" id="inicio">
+<!-- =====================================
+     HERO
+===================================== -->
 
-  <div class="hero-content">
+<section
+    class="hero"
+    id="inicio"
+>
 
-    <h1>
-      PUNTO <span>G</span>
-    </h1>
+    <div class="hero-content">
 
-    <p>
-      Tu placer tiene un punto.
-      Descubrí nuestra selección de productos para disfrutar,
-      explorar y compartir.
-    </p>
+        <h1>
+            PUNTO <span>G</span>
+        </h1>
 
-    <a href="#catalogo" class="btn">
-      Ver catálogo
-    </a>
 
-  </div>
+        <p>
+            Tu placer tiene un punto.
+            <br>
+
+            Descubrí productos para disfrutar,
+            explorar y compartir.
+        </p>
+
+
+        <a
+            href="#catalogo"
+            class="button"
+        >
+            Ver catálogo
+        </a>
+
+    </div>
 
 </section>
 
 
-<!-- BENEFICIOS -->
+
+<!-- =====================================
+     BENEFICIOS
+===================================== -->
 
 <section class="benefits">
 
-  <div class="benefit">
-    <h3>📦 Envíos discretos</h3>
-    <p>
-      Tu pedido llega en un packaging discreto.
-    </p>
-  </div>
 
-  <div class="benefit">
-    <h3>🔒 Compra segura</h3>
-    <p>
-      Protegemos tus datos y tu privacidad.
-    </p>
-  </div>
+    <div class="benefit">
 
-  <div class="benefit">
-    <h3>💬 Atención personalizada</h3>
-    <p>
-      Consultanos antes o después de tu compra.
-    </p>
-  </div>
+        <h3>
+            📦 Envíos discretos
+        </h3>
+
+        <p>
+            Recibí tu pedido en un packaging
+            completamente discreto.
+        </p>
+
+    </div>
+
+
+    <div class="benefit">
+
+        <h3>
+            🔒 Compra segura
+        </h3>
+
+        <p>
+            Cuidamos tu privacidad
+            durante todo el proceso.
+        </p>
+
+    </div>
+
+
+    <div class="benefit">
+
+        <h3>
+            💬 Atención personalizada
+        </h3>
+
+        <p>
+            Estamos disponibles para ayudarte
+            a elegir tu producto.
+        </p>
+
+    </div>
+
 
 </section>
 
 
-<!-- CATALOGO -->
 
-<section class="catalog" id="catalogo">
+<!-- =====================================
+     CATALOGO
+===================================== -->
 
-  <div class="section-title">
+<section
+    class="catalog"
+    id="catalogo"
+>
 
-    <h2>Catálogo</h2>
+
+    <div class="title">
+
+        <h2>
+            Nuestro catálogo
+        </h2>
+
+        <p>
+            Encontrá tu próximo favorito.
+        </p>
+
+    </div>
+
+
+
+    <div class="products">
+
+
+        <!-- =================================
+             PRODUCTO 1
+        ================================= -->
+
+        <article class="product">
+
+
+            <div
+                class="gallery"
+                id="gallery1"
+            >
+
+                <img
+                    src="img/Triple Estimulador - Gryating and vibrating rabbit vibe - PP0186.png"
+                    class="active"
+                    alt="Triple Estimulador PP0186"
+                >
+
+                <img
+                    src="img/pp0186-.png"
+                    alt="Triple Estimulador PP0186"
+                >
+
+                <img
+                    src="img/pp0186_2_.png"
+                    alt="Triple Estimulador PP0186"
+                >
+
+                <img
+                    src="img/pp0186_4_.png"
+                    alt="Triple Estimulador PP0186"
+                >
+
+
+                <button
+                    class="gallery-button prev"
+                    onclick="changeImage('gallery1', -1)"
+                >
+                    ‹
+                </button>
+
+
+                <button
+                    class="gallery-button next"
+                    onclick="changeImage('gallery1', 1)"
+                >
+                    ›
+                </button>
+
+
+                <div class="dots">
+
+                    <span class="dot active"></span>
+
+                    <span class="dot"></span>
+
+                    <span class="dot"></span>
+
+                    <span class="dot"></span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="product-info">
+
+
+                <span class="category">
+                    Estimuladores
+                </span>
+
+
+                <h3>
+                    Triple Estimulador Gyrating & Vibrating Rabbit Vibe
+                </h3>
+
+
+                <p class="description">
+
+                    Triple estimulador con diseño
+                    tipo rabbit y diferentes funciones
+                    de vibración.
+
+                </p>
+
+
+                <div class="consult-price">
+                    Consultar precio
+                </div>
+
+
+                <button
+                    class="buy"
+                    onclick="consultar('Triple Estimulador Gyrating & Vibrating Rabbit Vibe')"
+                >
+                    Consultar / Comprar
+                </button>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================
+             PRODUCTO 2
+        ================================= -->
+
+        <article class="product">
+
+
+            <div
+                class="gallery"
+                id="gallery2"
+            >
+
+                <img
+                    src="img/Fiorella 1.jpeg"
+                    class="active"
+                    alt="Fiorella 1"
+                >
+
+                <img
+                    src="img/Fiorella 1 foto 2.jpeg"
+                    alt="Fiorella 1"
+                >
+
+                <img
+                    src="img/Fiorella 1 foto 3.jpeg"
+                    alt="Fiorella 1"
+                >
+
+                <img
+                    src="img/Fiorella 1 foto 4.jpeg"
+                    alt="Fiorella 1"
+                >
+
+
+                <button
+                    class="gallery-button prev"
+                    onclick="changeImage('gallery2', -1)"
+                >
+                    ‹
+                </button>
+
+
+                <button
+                    class="gallery-button next"
+                    onclick="changeImage('gallery2', 1)"
+                >
+                    ›
+                </button>
+
+
+                <div class="dots">
+
+                    <span class="dot active"></span>
+
+                    <span class="dot"></span>
+
+                    <span class="dot"></span>
+
+                    <span class="dot"></span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="product-info">
+
+
+                <span class="category">
+                    Estimuladores
+                </span>
+
+
+                <h3>
+                    Fiorella 1
+                </h3>
+
+
+                <p class="description">
+
+                    Producto Fiorella 1.
+                    Consultanos por características,
+                    disponibilidad y formas de entrega.
+
+                </p>
+
+
+                <div class="consult-price">
+                    Consultar precio
+                </div>
+
+
+                <button
+                    class="buy"
+                    onclick="consultar('Fiorella 1')"
+                >
+                    Consultar / Comprar
+                </button>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================
+             PRODUCTO 3
+        ================================= -->
+
+        <article class="product">
+
+
+            <div
+                class="gallery"
+                id="gallery3"
+            >
+
+                <img
+                    src="img/ANA 5 - ST-TOY-035.jpeg"
+                    class="active"
+                    alt="ANA 5 ST-TOY-035"
+                >
+
+                <img
+                    src="img/ST - TOY - 035.jpg"
+                    alt="ANA 5 ST-TOY-035"
+                >
+
+
+                <button
+                    class="gallery-button prev"
+                    onclick="changeImage('gallery3', -1)"
+                >
+                    ‹
+                </button>
+
+
+                <button
+                    class="gallery-button next"
+                    onclick="changeImage('gallery3', 1)"
+                >
+                    ›
+                </button>
+
+
+                <div class="dots">
+
+                    <span class="dot active"></span>
+
+                    <span class="dot"></span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="product-info">
+
+
+                <span class="category">
+                    Vibradores
+                </span>
+
+
+                <h3>
+                    ANA 5 - ST-TOY-035
+                </h3>
+
+
+                <p class="description">
+
+                    Producto ANA 5.
+                    Consultanos por disponibilidad
+                    y opciones de compra.
+
+                </p>
+
+
+                <div class="price">
+                    $100.000
+                </div>
+
+
+                <button
+                    class="buy"
+                    onclick="comprar('ANA 5 - ST-TOY-035')"
+                >
+                    Comprar
+                </button>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     ENVÍOS
+===================================== -->
+
+<section
+    class="shipping"
+    id="envios"
+>
+
+
+    <h2>
+        Tu privacidad es importante.
+    </h2>
+
 
     <p>
-      Encontrá tu próximo favorito.
+
+        Todos nuestros pedidos se preparan
+        con packaging discreto y sin referencias
+        explícitas al contenido.
+
     </p>
 
-  </div>
-
-
-  <div class="filters">
-
-    <button class="filter active" onclick="filterProducts('todos', this)">
-      Todos
-    </button>
-
-    <button class="filter" onclick="filterProducts('vibradores', this)">
-      Vibradores
-    </button>
-
-    <button class="filter" onclick="filterProducts('estimuladores', this)">
-      Estimuladores
-    </button>
-
-    <button class="filter" onclick="filterProducts('lubricantes', this)">
-      Lubricantes
-    </button>
-
-    <button class="filter" onclick="filterProducts('parejas', this)">
-      Parejas
-    </button>
-
-  </div>
-
-
-  <div class="products" id="products"></div>
-
 </section>
 
 
-<!-- ENVIOS -->
 
-<section class="shipping" id="envios">
-
-  <h2>Discreto. Siempre.</h2>
-
-  <p>
-    Sabemos que la privacidad es importante.
-    Todos nuestros pedidos se preparan con packaging discreto,
-    sin referencias explícitas al contenido.
-  </p>
-
-</section>
-
-
-<!-- FOOTER -->
+<!-- =====================================
+     FOOTER
+===================================== -->
 
 <footer id="contacto">
 
-  <strong>PUNTO G SEX SHOP</strong>
+    <strong>
+        PUNTO G SEX SHOP
+    </strong>
 
-  <br><br>
 
-  Tu placer tiene un punto.
+    <br><br>
 
-  <br><br>
 
-  Instagram · WhatsApp
+    Tu placer tiene un punto.
 
-  <br><br>
 
-  © 2026 Punto G Sex Shop
+    <br><br>
+
+
+    Instagram · WhatsApp
+
+
+    <br><br>
+
+
+    © 2026 Punto G Sex Shop
 
 </footer>
 
 
-<!-- CARRITO -->
 
-<div class="cart" id="cart">
-
-  <div class="cart-header">
-
-    <h2>Tu carrito</h2>
-
-    <button class="close-cart" onclick="toggleCart()">
-      ×
-    </button>
-
-  </div>
-
-  <div id="cart-items"></div>
-
-  <div class="cart-total">
-
-    Total:
-    $<span id="cart-total">0</span>
-
-  </div>
-
-  <button
-    class="btn checkout"
-    onclick="checkoutWhatsApp()"
-  >
-    Comprar por WhatsApp
-  </button>
-
-</div>
-
-
-<!-- WHATSAPP -->
+<!-- =====================================
+     WHATSAPP
+===================================== -->
 
 <a
-  class="whatsapp"
-  href="https://wa.me/5491100000000"
-  target="_blank"
+    class="whatsapp"
+    href="https://wa.me/5491100000000"
+    target="_blank"
+    aria-label="WhatsApp"
 >
-  ☎
+    ☎
 </a>
+
 
 
 <script>
 
-  /*
-  ========================================
-  PRODUCTOS
-  ========================================
-  */
 
-  const products = [
-
-    {
-      id: 1,
-      name: "Vibrador Ana5",
-      category: "vibradores",
-      price: 105000,
-      image: "images/ana5.jpg"
-    },
-
-    {
-      id: 2,
-      name: "Vibrador Premium",
-      category: "vibradores",
-      price: 89000,
-      image: "images/vibrador-premium.jpg"
-    },
-
-    {
-      id: 3,
-      name: "Estimulador Suave",
-      category: "estimuladores",
-      price: 75000,
-      image: "images/estimulador.jpg"
-    },
-
-    {
-      id: 4,
-      name: "Lubricante Base Agua",
-      category: "lubricantes",
-      price: 18000,
-      image: "images/lubricante.jpg"
-    },
-
-    {
-      id: 5,
-      name: "Kit para Parejas",
-      category: "parejas",
-      price: 120000,
-      image: "images/kit-parejas.jpg"
-    }
-
-  ];
+    /* =====================================
+       CAMBIAR FOTO
+    ===================================== */
 
 
-  let cart = [];
+    function changeImage(
+        galleryId,
+        direction
+    ) {
 
 
-  /*
-  ========================================
-  MOSTRAR PRODUCTOS
-  ========================================
-  */
-
-  function displayProducts(list = products) {
-
-    const container =
-      document.getElementById("products");
-
-    container.innerHTML = "";
-
-    list.forEach(product => {
-
-      container.innerHTML += `
-
-        <article class="product">
-
-          <div class="product-image">
-
-            <img
-              src="${product.image}"
-              alt="${product.name}"
-              style="width:100%;height:100%;object-fit:cover;"
-            >
-
-          </div>
-
-          <div class="product-info">
-
-            <span class="product-category">
-              ${product.category}
-            </span>
-
-            <h3>
-              ${product.name}
-            </h3>
-
-            <div class="price">
-              $${product.price.toLocaleString("es-AR")}
-            </div>
-
-            <button
-              class="add-cart"
-              onclick="addToCart(${product.id})"
-            >
-              Agregar al carrito
-            </button>
-
-          </div>
-
-        </article>
-
-      `;
-
-    });
-
-  }
+        const gallery =
+            document.getElementById(
+                galleryId
+            );
 
 
-  /*
-  ========================================
-  FILTROS
-  ========================================
-  */
+        const images =
+            gallery.querySelectorAll(
+                "img"
+            );
 
-  function filterProducts(category, button) {
 
-    document
-      .querySelectorAll(".filter")
-      .forEach(btn => btn.classList.remove("active"));
+        const dots =
+            gallery.querySelectorAll(
+                ".dot"
+            );
 
-    button.classList.add("active");
 
-    if (category === "todos") {
+        let current = 0;
 
-      displayProducts(products);
 
-    } else {
+        images.forEach(
+            (image, index) => {
 
-      const filtered =
-        products.filter(
-          product => product.category === category
+                if (
+                    image.classList.contains(
+                        "active"
+                    )
+                ) {
+
+                    current = index;
+
+                }
+
+            }
         );
 
-      displayProducts(filtered);
 
-    }
-
-  }
-
-
-  /*
-  ========================================
-  AGREGAR AL CARRITO
-  ========================================
-  */
-
-  function addToCart(id) {
-
-    const product =
-      products.find(p => p.id === id);
-
-    cart.push(product);
-
-    updateCart();
-
-  }
+        images[
+            current
+        ].classList.remove(
+            "active"
+        );
 
 
-  /*
-  ========================================
-  ACTUALIZAR CARRITO
-  ========================================
-  */
-
-  function updateCart() {
-
-    const container =
-      document.getElementById("cart-items");
-
-    const count =
-      document.getElementById("cart-count");
-
-    const total =
-      document.getElementById("cart-total");
-
-    container.innerHTML = "";
-
-    let totalPrice = 0;
+        dots[
+            current
+        ].classList.remove(
+            "active"
+        );
 
 
-    cart.forEach((product, index) => {
-
-      totalPrice += product.price;
-
-      container.innerHTML += `
-
-        <div class="cart-item">
-
-          <strong>
-            ${product.name}
-          </strong>
-
-          $${product.price.toLocaleString("es-AR")}
-
-          <button
-            onclick="removeFromCart(${index})"
-            style="
-              float:right;
-              background:none;
-              border:none;
-              color:#c83f68;
-              cursor:pointer;
-            "
-          >
-            Eliminar
-          </button>
-
-        </div>
-
-      `;
-
-    });
+        current += direction;
 
 
-    count.innerText = cart.length;
+        if (
+            current >= images.length
+        ) {
 
-    total.innerText =
-      totalPrice.toLocaleString("es-AR");
+            current = 0;
 
-  }
-
-
-  /*
-  ========================================
-  ELIMINAR
-  ========================================
-  */
-
-  function removeFromCart(index) {
-
-    cart.splice(index, 1);
-
-    updateCart();
-
-  }
+        }
 
 
-  /*
-  ========================================
-  ABRIR / CERRAR CARRITO
-  ========================================
-  */
+        if (
+            current < 0
+        ) {
 
-  function toggleCart() {
+            current =
+                images.length - 1;
 
-    document
-      .getElementById("cart")
-      .classList.toggle("open");
-
-  }
+        }
 
 
-  /*
-  ========================================
-  WHATSAPP
-  ========================================
-  */
+        images[
+            current
+        ].classList.add(
+            "active"
+        );
 
-  function checkoutWhatsApp() {
 
-    if (cart.length === 0) {
-
-      alert("Tu carrito está vacío.");
-
-      return;
+        dots[
+            current
+        ].classList.add(
+            "active"
+        );
 
     }
 
 
-    let message =
-      "Hola! Quiero realizar una compra en Punto G Sex Shop:%0A%0A";
 
-    let total = 0;
-
-
-    cart.forEach(product => {
-
-      message +=
-        "• " +
-        product.name +
-        " - $" +
-        product.price.toLocaleString("es-AR") +
-        "%0A";
-
-      total += product.price;
-
-    });
+    /* =====================================
+       COMPRAR ANA 5
+    ===================================== */
 
 
-    message +=
-      "%0ATotal: $" +
-      total.toLocaleString("es-AR");
+    function comprar(
+        producto
+    ) {
 
 
-    /*
-      CAMBIAR ESTE NÚMERO
-      POR EL WHATSAPP REAL
-    */
-
-    const phone =
-      "5491100000000";
+        const telefono =
+            "5491100000000";
 
 
-    window.open(
-      `https://wa.me/${phone}?text=${message}`,
-      "_blank"
-    );
-
-  }
+        const mensaje =
+            `Hola! Quiero comprar ${producto} en Punto G Sex Shop.`;
 
 
-  /*
-  ========================================
-  INICIAR
-  ========================================
-  */
+        const url =
+            `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
 
-  displayProducts();
+
+        window.open(
+            url,
+            "_blank"
+        );
+
+    }
+
+
+
+    /* =====================================
+       CONSULTAR PRODUCTO
+    ===================================== */
+
+
+    function consultar(
+        producto
+    ) {
+
+
+        const telefono =
+            "5491100000000";
+
+
+        const mensaje =
+            `Hola! Quería consultar por ${producto} de Punto G Sex Shop.`;
+
+
+        const url =
+            `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+
+
+        window.open(
+            url,
+            "_blank"
+        );
+
+    }
+
 
 </script>
 
+
 </body>
+
 </html>

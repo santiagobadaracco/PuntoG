@@ -1,1 +1,1868 @@
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Carrito | Punto G Sex Shop</title>
+
+<meta
+    name="description"
+    content="Tu carrito de compras en Punto G Sex Shop."
+>
+
+
+<style>
+
+/* =====================================
+   RESET
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    background: #0d0b0d;
+
+    color: #f5eef2;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    min-height: 100vh;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+button {
+    font-family: inherit;
+}
+
+
+
+/* =====================================
+   HEADER
+===================================== */
+
+header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    background:
+        rgba(
+            13,
+            11,
+            13,
+            0.97
+        );
+
+    border-bottom:
+        1px solid #30242b;
+
+    backdrop-filter:
+        blur(10px);
+}
+
+
+.nav {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    height: 74px;
+
+    margin: auto;
+
+    padding:
+        0 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.logo {
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+
+.logo span {
+    color: #d94a75;
+}
+
+
+nav {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 28px;
+}
+
+
+nav a {
+
+    color: #eee;
+
+    font-size: 14px;
+
+    transition:
+        color 0.2s ease;
+}
+
+
+nav a:hover {
+    color: #d94a75;
+}
+
+
+
+/* =====================================
+   ICONO CARRITO HEADER
+===================================== */
+
+.cart-link {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: #eee;
+}
+
+
+.cart-icon {
+    font-size: 20px;
+}
+
+
+.cart-count {
+
+    position: absolute;
+
+    top: -9px;
+
+    right: -12px;
+
+    min-width: 19px;
+
+    height: 19px;
+
+    padding: 0 5px;
+
+    border-radius: 20px;
+
+    background: #d94a75;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 10px;
+
+    font-weight: bold;
+}
+
+
+
+/* =====================================
+   CONTENEDOR PRINCIPAL
+===================================== */
+
+.cart-page {
+
+    width: 100%;
+
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding:
+        70px 20px
+        100px;
+}
+
+
+
+/* =====================================
+   TITULO
+===================================== */
+
+.page-title {
+
+    text-align: center;
+
+    margin-bottom: 50px;
+}
+
+
+.page-title h1 {
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(
+            34px,
+            6vw,
+            48px
+        );
+
+    margin-bottom: 10px;
+}
+
+
+.page-title h1 span {
+    color: #d94a75;
+}
+
+
+.page-title p {
+
+    color: #aaa0a6;
+
+    font-size: 15px;
+}
+
+
+
+/* =====================================
+   LAYOUT
+===================================== */
+
+.cart-layout {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        350px;
+
+    gap: 25px;
+
+    align-items: start;
+}
+
+
+
+/* =====================================
+   LISTA
+===================================== */
+
+.cart-items {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+
+
+/* =====================================
+   PRODUCTO DEL CARRITO
+===================================== */
+
+.cart-item {
+
+    background: #151115;
+
+    border:
+        1px solid #30242b;
+
+    border-radius: 16px;
+
+    padding: 18px;
+
+    display: grid;
+
+    grid-template-columns:
+        105px
+        minmax(0, 1fr)
+        auto;
+
+    gap: 18px;
+
+    align-items: center;
+
+    transition:
+        border-color 0.2s ease;
+}
+
+
+.cart-item:hover {
+    border-color: #4d303c;
+}
+
+
+
+/* =====================================
+   IMAGEN
+===================================== */
+
+.cart-image {
+
+    width: 105px;
+
+    height: 105px;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #30202a,
+            #100d10
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.cart-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    padding: 8px;
+}
+
+
+
+/* =====================================
+   INFO
+===================================== */
+
+.cart-info {
+
+    min-width: 0;
+}
+
+
+.cart-category {
+
+    color: #d94a75;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 5px;
+}
+
+
+.cart-name {
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 19px;
+
+    line-height: 1.3;
+
+    margin-bottom: 8px;
+}
+
+
+.cart-price {
+
+    color: #c6b9c0;
+
+    font-size: 14px;
+}
+
+
+
+/* =====================================
+   CONTROLES
+===================================== */
+
+.cart-controls {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    gap: 12px;
+}
+
+
+.quantity {
+
+    display: flex;
+
+    align-items: center;
+
+    border:
+        1px solid #3a2a32;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+}
+
+
+.quantity button {
+
+    width: 34px;
+
+    height: 34px;
+
+    border: none;
+
+    background: #211820;
+
+    color: white;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease;
+}
+
+
+.quantity button:hover {
+    background: #d94a75;
+}
+
+
+.quantity-number {
+
+    width: 38px;
+
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 14px;
+
+    background: #151115;
+}
+
+
+.item-total {
+
+    font-size: 16px;
+
+    font-weight: bold;
+}
+
+
+.remove {
+
+    border: none;
+
+    background: transparent;
+
+    color: #81767d;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease;
+}
+
+
+.remove:hover {
+    color: #d94a75;
+}
+
+
+
+/* =====================================
+   RESUMEN
+===================================== */
+
+.summary {
+
+    position: sticky;
+
+    top: 100px;
+
+    background: #151115;
+
+    border:
+        1px solid #30242b;
+
+    border-radius: 16px;
+
+    padding: 25px;
+}
+
+
+.summary h2 {
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 25px;
+
+    margin-bottom: 25px;
+}
+
+
+.summary-line {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    color: #aaa0a6;
+
+    font-size: 14px;
+
+    margin-bottom: 14px;
+}
+
+
+.summary-line strong {
+
+    color: #f5eef2;
+
+    font-weight: normal;
+}
+
+
+.summary-divider {
+
+    height: 1px;
+
+    background: #30242b;
+
+    margin:
+        20px 0;
+}
+
+
+.summary-total {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+
+.summary-total span {
+
+    color: #aaa0a6;
+
+    font-size: 15px;
+}
+
+
+.summary-total strong {
+
+    font-size: 25px;
+}
+
+
+
+/* =====================================
+   BOTONES
+===================================== */
+
+.checkout-button {
+
+    width: 100%;
+
+    min-height: 48px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #d94a75;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.checkout-button:hover {
+
+    background: #ed628c;
+
+    transform:
+        translateY(-2px);
+}
+
+
+.checkout-button:disabled {
+
+    background: #403139;
+
+    color: #81767d;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+.continue-button {
+
+    width: 100%;
+
+    min-height: 45px;
+
+    margin-top: 10px;
+
+    border:
+        1px solid #d94a75;
+
+    border-radius: 9px;
+
+    background: transparent;
+
+    color: #d94a75;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.continue-button:hover {
+
+    background: #d94a75;
+
+    color: white;
+}
+
+
+
+/* =====================================
+   PRIVACIDAD
+===================================== */
+
+.privacy-note {
+
+    margin-top: 18px;
+
+    padding-top: 18px;
+
+    border-top:
+        1px solid #30242b;
+
+    color: #81767d;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+    text-align: center;
+}
+
+
+
+/* =====================================
+   CARRITO VACIO
+===================================== */
+
+.empty-cart {
+
+    display: none;
+
+    max-width: 600px;
+
+    margin:
+        30px auto;
+
+    padding:
+        65px 30px;
+
+    text-align: center;
+
+    background: #151115;
+
+    border:
+        1px solid #30242b;
+
+    border-radius: 18px;
+}
+
+
+.empty-icon {
+
+    font-size: 45px;
+
+    margin-bottom: 20px;
+
+    opacity: 0.8;
+}
+
+
+.empty-cart h2 {
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 28px;
+
+    margin-bottom: 10px;
+}
+
+
+.empty-cart p {
+
+    color: #aaa0a6;
+
+    font-size: 14px;
+
+    margin-bottom: 25px;
+}
+
+
+.empty-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 45px;
+
+    padding:
+        0 25px;
+
+    border-radius: 9px;
+
+    background: #d94a75;
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+.empty-button:hover {
+    background: #ed628c;
+}
+
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+footer {
+
+    padding:
+        50px 20px;
+
+    text-align: center;
+
+    color: #81767d;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    border-top:
+        1px solid #30242b;
+}
+
+
+footer strong {
+
+    color: #f5eef2;
+
+    letter-spacing: 2px;
+}
+
+
+
+/* =====================================
+   WHATSAPP
+===================================== */
+
+.whatsapp {
+
+    position: fixed;
+
+    right: 20px;
+
+    bottom: 20px;
+
+    width: 56px;
+
+    height: 56px;
+
+    border-radius: 50%;
+
+    background: #25d366;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 24px;
+
+    z-index: 999;
+
+    box-shadow:
+        0 5px 25px
+        rgba(
+            0,
+            0,
+            0,
+            0.4
+        );
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+.whatsapp:hover {
+    transform: scale(1.08);
+}
+
+
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 850px) {
+
+    .cart-layout {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .summary {
+
+        position: static;
+
+    }
+
+}
+
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 620px) {
+
+    .nav {
+
+        height: 68px;
+
+        padding:
+            0 18px;
+    }
+
+
+    .logo {
+
+        font-size: 21px;
+
+        letter-spacing: 2px;
+    }
+
+
+    nav a {
+        display: none;
+    }
+
+
+    .cart-link {
+        margin-left: auto;
+    }
+
+
+    .cart-page {
+
+        padding:
+            50px 15px
+            80px;
+    }
+
+
+    .page-title {
+
+        margin-bottom: 35px;
+    }
+
+
+    .cart-item {
+
+        grid-template-columns:
+            82px
+            minmax(0, 1fr);
+
+        gap: 14px;
+
+        padding: 14px;
+    }
+
+
+    .cart-image {
+
+        width: 82px;
+
+        height: 82px;
+    }
+
+
+    .cart-name {
+
+        font-size: 16px;
+    }
+
+
+    .cart-controls {
+
+        grid-column:
+            1 / -1;
+
+        flex-direction: row;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        padding-top: 10px;
+
+        border-top:
+            1px solid #30242b;
+    }
+
+
+    .summary {
+
+        padding: 22px;
+    }
+
+
+    .whatsapp {
+
+        right: 15px;
+
+        bottom: 15px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     HEADER
+===================================== -->
+
+<header>
+
+<div class="nav">
+
+
+<a
+    href="index.html"
+    class="logo"
+>
+    PUNTO <span>G</span>
+</a>
+
+
+<nav>
+
+<a href="index.html">
+Inicio
+</a>
+
+<a href="index.html#catalogo">
+Catálogo
+</a>
+
+<a href="index.html#envios">
+Envíos
+</a>
+
+<a href="index.html#contacto">
+Contacto
+</a>
+
+<a
+    href="carrito.html"
+    class="cart-link"
+>
+
+<span class="cart-icon">
+🛒
+</span>
+
+<span>
+Carrito
+</span>
+
+<span
+    class="cart-count"
+    id="headerCartCount"
+>
+0
+</span>
+
+</a>
+
+</nav>
+
+
+</div>
+
+</header>
+
+
+
+<!-- =====================================
+     CONTENIDO
+===================================== -->
+
+<main class="cart-page">
+
+
+<div class="page-title">
+
+<h1>
+Tu carrito <span>de compra</span>
+</h1>
+
+<p>
+Revisá tus productos antes de continuar.
+</p>
+
+</div>
+
+
+
+<!-- =====================================
+     CARRITO VACIO
+===================================== -->
+
+<section
+    class="empty-cart"
+    id="emptyCart"
+>
+
+<div class="empty-icon">
+🛍️
+</div>
+
+<h2>
+Tu carrito está vacío
+</h2>
+
+<p>
+Todavía no agregaste ningún producto.
+</p>
+
+<a
+    href="index.html#catalogo"
+    class="empty-button"
+>
+Ver catálogo
+</a>
+
+</section>
+
+
+
+<!-- =====================================
+     CARRITO CON PRODUCTOS
+===================================== -->
+
+<section
+    class="cart-layout"
+    id="cartContent"
+>
+
+
+<div
+    class="cart-items"
+    id="cartItems"
+>
+</div>
+
+
+
+<!-- =====================================
+     RESUMEN
+===================================== -->
+
+<aside class="summary">
+
+
+<h2>
+Resumen del pedido
+</h2>
+
+
+<div class="summary-line">
+
+<span>
+Productos
+</span>
+
+<strong id="summaryQuantity">
+0
+</strong>
+
+</div>
+
+
+<div class="summary-line">
+
+<span>
+Subtotal
+</span>
+
+<strong id="summarySubtotal">
+$0
+</strong>
+
+</div>
+
+
+<div class="summary-line">
+
+<span>
+Envío
+</span>
+
+<strong>
+A calcular
+</strong>
+
+</div>
+
+
+<div class="summary-divider">
+</div>
+
+
+<div class="summary-total">
+
+<span>
+Total
+</span>
+
+<strong id="summaryTotal">
+$0
+</strong>
+
+</div>
+
+
+<button
+    class="checkout-button"
+    id="checkoutButton"
+    onclick="irAlCheckout()"
+>
+Finalizar compra
+</button>
+
+
+<a
+    href="index.html#catalogo"
+    class="continue-button"
+>
+Seguir comprando
+</a>
+
+
+<div class="privacy-note">
+
+🔒 Tus datos serán tratados de forma
+confidencial y tu compra será gestionada
+de manera segura.
+
+</div>
+
+
+</aside>
+
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================
+     FOOTER
+===================================== -->
+
+<footer>
+
+<strong>
+PUNTO G SEX SHOP
+</strong>
+
+<br><br>
+
+Tu placer tiene un punto.
+
+<br><br>
+
+WhatsApp: 11 2647-3370
+
+<br><br>
+
+© 2026 Punto G Sex Shop
+
+</footer>
+
+
+
+<!-- =====================================
+     WHATSAPP
+===================================== -->
+
+<a
+    class="whatsapp"
+    href="https://wa.me/5491126473370"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contactar por WhatsApp"
+>
+☎
+</a>
+
+
+
+<script>
+
+/* =====================================
+   CONFIGURACION
+===================================== */
+
+/*
+   Esta es la clave que utilizaremos
+   en todo Punto G para guardar
+   el carrito.
+*/
+
+const CART_KEY = "puntoGCarrito";
+
+
+/* =====================================
+   OBTENER CARRITO
+===================================== */
+
+function obtenerCarrito() {
+
+    try {
+
+        const carrito =
+            localStorage.getItem(CART_KEY);
+
+        if (!carrito) {
+            return [];
+        }
+
+        const datos =
+            JSON.parse(carrito);
+
+        if (!Array.isArray(datos)) {
+            return [];
+        }
+
+        return datos;
+
+    } catch (error) {
+
+        console.error(
+            "Error leyendo el carrito:",
+            error
+        );
+
+        return [];
+
+    }
+
+}
+
+
+/* =====================================
+   GUARDAR CARRITO
+===================================== */
+
+function guardarCarrito(carrito) {
+
+    localStorage.setItem(
+        CART_KEY,
+        JSON.stringify(carrito)
+    );
+
+}
+
+
+/* =====================================
+   FORMATEAR PRECIO
+===================================== */
+
+function formatearPrecio(numero) {
+
+    return "$" +
+        Number(numero).toLocaleString(
+            "es-AR"
+        );
+
+}
+
+
+/* =====================================
+   CANTIDAD TOTAL
+===================================== */
+
+function obtenerCantidadTotal(carrito) {
+
+    return carrito.reduce(
+        function(total, producto) {
+
+            return total +
+                Number(
+                    producto.quantity || 1
+                );
+
+        },
+        0
+    );
+
+}
+
+
+/* =====================================
+   ACTUALIZAR CONTADOR
+===================================== */
+
+function actualizarContador(carrito) {
+
+    const cantidad =
+        obtenerCantidadTotal(carrito);
+
+    const contador =
+        document.getElementById(
+            "headerCartCount"
+        );
+
+    contador.textContent =
+        cantidad;
+
+}
+
+
+/* =====================================
+   CALCULAR SUBTOTAL
+===================================== */
+
+function calcularSubtotal(carrito) {
+
+    return carrito.reduce(
+        function(total, producto) {
+
+            const precio =
+                Number(
+                    producto.price || 0
+                );
+
+            const cantidad =
+                Number(
+                    producto.quantity || 1
+                );
+
+            return total +
+                (precio * cantidad);
+
+        },
+        0
+    );
+
+}
+
+
+/* =====================================
+   MOSTRAR CARRITO
+===================================== */
+
+function renderizarCarrito() {
+
+    const carrito =
+        obtenerCarrito();
+
+    const lista =
+        document.getElementById(
+            "cartItems"
+        );
+
+    const contenido =
+        document.getElementById(
+            "cartContent"
+        );
+
+    const carritoVacio =
+        document.getElementById(
+            "emptyCart"
+        );
+
+
+    actualizarContador(carrito);
+
+
+    /*
+       Si no hay productos,
+       mostramos el estado vacío.
+    */
+
+    if (carrito.length === 0) {
+
+        contenido.style.display =
+            "none";
+
+        carritoVacio.style.display =
+            "block";
+
+        actualizarResumen([]);
+
+        return;
+
+    }
+
+
+    contenido.style.display =
+        "grid";
+
+    carritoVacio.style.display =
+        "none";
+
+
+    lista.innerHTML = "";
+
+
+    carrito.forEach(
+        function(producto, index) {
+
+            const precio =
+                Number(
+                    producto.price || 0
+                );
+
+            const cantidad =
+                Number(
+                    producto.quantity || 1
+                );
+
+            const total =
+                precio * cantidad;
+
+
+            const item =
+                document.createElement(
+                    "article"
+                );
+
+
+            item.className =
+                "cart-item";
+
+
+            item.innerHTML = `
+
+                <div class="cart-image">
+
+                    <img
+                        src="${producto.image || "img/placeholder.png"}"
+                        alt="${producto.name || "Producto Punto G"}"
+                    >
+
+                </div>
+
+
+                <div class="cart-info">
+
+                    <div class="cart-category">
+
+                        ${producto.category || "Producto"}
+
+                    </div>
+
+
+                    <h3 class="cart-name">
+
+                        ${producto.name || "Producto"}
+
+                    </h3>
+
+
+                    <div class="cart-price">
+
+                        ${formatearPrecio(precio)}
+                        por unidad
+
+                    </div>
+
+                </div>
+
+
+                <div class="cart-controls">
+
+
+                    <div class="quantity">
+
+
+                        <button
+                            type="button"
+                            onclick="cambiarCantidad(${index}, -1)"
+                            aria-label="Disminuir cantidad"
+                        >
+                            −
+                        </button>
+
+
+                        <span class="quantity-number">
+
+                            ${cantidad}
+
+                        </span>
+
+
+                        <button
+                            type="button"
+                            onclick="cambiarCantidad(${index}, 1)"
+                            aria-label="Aumentar cantidad"
+                        >
+                            +
+                        </button>
+
+
+                    </div>
+
+
+                    <strong class="item-total">
+
+                        ${formatearPrecio(total)}
+
+                    </strong>
+
+
+                    <button
+                        type="button"
+                        class="remove"
+                        onclick="eliminarProducto(${index})"
+                    >
+
+                        Eliminar
+
+                    </button>
+
+
+                </div>
+
+            `;
+
+
+            lista.appendChild(item);
+
+        }
+    );
+
+
+    actualizarResumen(carrito);
+
+}
+
+
+/* =====================================
+   CAMBIAR CANTIDAD
+===================================== */
+
+function cambiarCantidad(
+    index,
+    cambio
+) {
+
+    const carrito =
+        obtenerCarrito();
+
+
+    if (!carrito[index]) {
+        return;
+    }
+
+
+    let cantidad =
+        Number(
+            carrito[index].quantity || 1
+        );
+
+
+    cantidad += cambio;
+
+
+    /*
+       Nunca permitimos
+       cantidades menores a 1.
+    */
+
+    if (cantidad < 1) {
+        cantidad = 1;
+    }
+
+
+    carrito[index].quantity =
+        cantidad;
+
+
+    guardarCarrito(carrito);
+
+    renderizarCarrito();
+
+}
+
+
+/* =====================================
+   ELIMINAR PRODUCTO
+===================================== */
+
+function eliminarProducto(index) {
+
+    const carrito =
+        obtenerCarrito();
+
+
+    if (!carrito[index]) {
+        return;
+    }
+
+
+    carrito.splice(
+        index,
+        1
+    );
+
+
+    guardarCarrito(carrito);
+
+    renderizarCarrito();
+
+}
+
+
+/* =====================================
+   ACTUALIZAR RESUMEN
+===================================== */
+
+function actualizarResumen(carrito) {
+
+    const cantidad =
+        obtenerCantidadTotal(carrito);
+
+
+    const subtotal =
+        calcularSubtotal(carrito);
+
+
+    document.getElementById(
+        "summaryQuantity"
+    ).textContent =
+        cantidad;
+
+
+    document.getElementById(
+        "summarySubtotal"
+    ).textContent =
+        formatearPrecio(subtotal);
+
+
+    document.getElementById(
+        "summaryTotal"
+    ).textContent =
+        formatearPrecio(subtotal);
+
+
+    const boton =
+        document.getElementById(
+            "checkoutButton"
+        );
+
+
+    boton.disabled =
+        carrito.length === 0;
+
+}
+
+
+/* =====================================
+   IR AL CHECKOUT
+===================================== */
+
+function irAlCheckout() {
+
+    const carrito =
+        obtenerCarrito();
+
+
+    if (carrito.length === 0) {
+
+        return;
+
+    }
+
+
+    /*
+       checkout.html será la siguiente
+       página que vamos a construir.
+
+       El carrito queda guardado en
+       localStorage, por lo que checkout.html
+       podrá leer exactamente los mismos
+       productos.
+    */
+
+    window.location.href =
+        "checkout.html";
+
+}
+
+
+/* =====================================
+   INICIAR
+===================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        renderizarCarrito();
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
